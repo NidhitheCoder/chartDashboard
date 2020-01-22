@@ -48,9 +48,7 @@ class ProjectView extends React.Component {
         [2e5, 4e5],
         [1e5, 2e5],
       ],
-      style: {
-        width: '300px'
-    }
+ 
     }
 
     const stackedBarOptions = {
