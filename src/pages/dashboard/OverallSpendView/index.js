@@ -31,7 +31,7 @@ class OverallSpendView extends React.Component {
     }
 
     const pieData = {
-      labels: ['red', 'Blue', 'Yellow','red', 'Blue', 'Yellow','red', 'Blue',],
+      labels: ['Capex-CA', 'capex-CB', 'opex Dev','Opex-CRM', 'Opex-SO', 'Opex-ERP','Opex-SI', 'Opex-OH',],
       text:'heiii',
       datasets: [
         {
@@ -55,7 +55,7 @@ class OverallSpendView extends React.Component {
           </div>
         </div>
 
-        <div className="col-lg-9" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',float:'right' }}>
+        <div className="col-lg-9" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr',gridRowGap:'5%',float:'right' }}>
           <div>
             <h5 className="text-black">
               <strong>
