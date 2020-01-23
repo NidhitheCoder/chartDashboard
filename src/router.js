@@ -31,11 +31,11 @@ const routes = [
   {
     path: '/dashboard/alpha',
     component: loadable(() => import('pages/dashboard/alpha')),
+    exact: true,
   },
   {
     path: '/dashboard/OverallSpendView',
     component: loadable(() => import('pages/dashboard/OverallSpendView')),
-    exact: true,
   },
   {
     path: '/dashboard/FunctionView',
@@ -286,7 +286,7 @@ class Router extends React.Component {
       <ConnectedRouter history={history}>
         <IndexLayout>
           <Switch>
-            <Route exact path="/" render={() => <Redirect to="/dashboard/alpha" />} />
+            <Route exact path="/" render={() => <Redirect to="/dashboard/OverallSpendView" />} />
             {routes.map(route => (
               <Route
                 path={route.path}

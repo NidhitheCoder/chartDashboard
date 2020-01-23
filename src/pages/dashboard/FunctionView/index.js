@@ -33,7 +33,7 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-hourglass"
+              icon="lnr lnr-bookmark"
               name="Program 3"
               number="spended"
               type="benefit 1"
@@ -42,7 +42,7 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-hourglass"
+              icon="lnr lnr-bookmark"
               name="Program 4"
               number="6546-XXXX-1678-1579"
               type="VISA"
@@ -62,7 +62,6 @@ class FunctionView extends React.Component {
               number="4512-XXXX-1678-7528"
               type="VISA"
               footer="Expires at 02/20"
-              sum="$2,156.78"
             />
           </div>
           <div className="col-lg-3">
@@ -76,7 +75,7 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-hourglass"
+              icon="lnr lnr-bookmark"
               name="Program 3"
               number="spended"
               type="benefit 1"
@@ -85,12 +84,11 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-hourglass"
+              icon="lnr lnr-bookmark"
               name="Program 4"
               number="6546-XXXX-1678-1579"
               type="VISA"
               footer="Locked Temporary"
-              sum="$1,467,98"
             />
           </div>
         </div>
@@ -106,7 +104,6 @@ class FunctionView extends React.Component {
               number="4512-XXXX-1678-7528"
               type="VISA"
               footer="Expires at 02/20"
-              sum="$2,156.78"
             />
           </div>
           <div className="col-lg-3">
@@ -120,7 +117,7 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-hourglass"
+              icon="lnr lnr-bookmark"
               name="Program 3"
               number="spended"
               type="benefit 1"
@@ -129,12 +126,11 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-hourglass"
+              icon="lnr lnr-bookmark"
               name="Program 4"
               number="6546-XXXX-1678-1579"
               type="VISA"
               footer="Locked Temporary"
-              sum="$1,467,98"
             />
           </div>
         </div>
