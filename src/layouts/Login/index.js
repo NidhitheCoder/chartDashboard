@@ -1,20 +1,20 @@
 import React from 'react'
-import { Layout, Button } from 'antd'
-import { Link, withRouter } from 'react-router-dom'
+import { Layout } from 'antd'
+import { withRouter } from 'react-router-dom'
 import styles from './style.module.scss'
 
 @withRouter
 class LoginLayout extends React.PureComponent {
   state = {
-    backgroundNumber: 1,
-    backgroundEnabled: false,
+    backgroundNumber: 2,
+    backgroundEnabled: true,
   }
 
   changeBackground = () => {
-    const { backgroundNumber } = this.state
+    // const { backgroundNumber } = this.state
     this.setState({
       backgroundEnabled: true,
-      backgroundNumber: backgroundNumber === 5 ? 1 : backgroundNumber + 1,
+      backgroundNumber: 2,
     })
   }
 
@@ -42,7 +42,7 @@ class LoginLayout extends React.PureComponent {
           >
             <div className={styles.header}>
               <div className={styles.logo}>
-                <Link to="/">
+                {/* <Link to="/">
                   {!backgroundEnabled && (
                     <img src="resources/images/logo.png" alt="Clean UI React Admin Template" />
                   )}
@@ -52,9 +52,9 @@ class LoginLayout extends React.PureComponent {
                       alt="Clean UI React Admin Template"
                     />
                   )}
-                </Link>
+                </Link> */}
               </div>
-              <div className={styles.controls}>
+              {/* <div className={styles.controls}>
                 <div className="d-inline-block mr-3">
                   <Button type="default" onClick={this.changeBackground}>
                     Change Background
@@ -65,7 +65,7 @@ class LoginLayout extends React.PureComponent {
                     Toggle Background
                   </Button>
                 </div>
-              </div>
+              </div> */}
               <nav className={styles.navigation}>
                 <ul className={styles.navigationItems}>
                   <li>
@@ -104,7 +104,7 @@ class LoginLayout extends React.PureComponent {
                   <a href="javascript: void(0);">Contacts</a>
                 </li>
               </ul>
-              <p>&copy; 2019 Mediatec. All rights reserved.</p>
+              {/* <p>&copy; 2019 Mediatec. All rights reserved.</p> */}
             </div>
           </div>
         </Layout.Content>

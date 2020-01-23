@@ -66,8 +66,7 @@ class OverallSpendView extends React.Component {
           </div>
         </center>
         <div
-          className="col-lg-12"
-          style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridRowGap: '5%' }}
+          style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridRowGap: '5%',padding:'5%' }}
         >
           <div>
             <h5 className="text-black">

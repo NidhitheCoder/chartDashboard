@@ -28,19 +28,19 @@ export async function getLeftMenuData() {
       title: 'Function View',
       key: 'FunctionView',
       url: '/dashboard/FunctionView',
-      icon: 'icmn icmn-home',
+      icon: 'icmn icmn-books',
     },
     {
       title: 'Program View',
       key: 'ProgramView',
       url: '/dashboard/ProgramView',
-      icon: 'icmn icmn-home',
+      icon: 'icmn icmn-menu',
     },
     {
       title: 'Project View',
       key: 'ProjectView',
       url: '/dashboard/ProjectView',
-      icon: 'icmn icmn-home',
+      icon: 'icmn icmn-file-text',
     },
     {
       title: 'Settings',

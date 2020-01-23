@@ -48,7 +48,7 @@ class LoginFormComponent extends React.Component {
         </FormItem>
         <div className="form-actions">
           <Button type="primary" htmlType="submit" className="login-form-button">
-            Sign in
+            Sign inF
           </Button>
           <span className="ml-3 register-link">
             <a href="javascript: void(0);" className="text-primary utils__link--underlined">

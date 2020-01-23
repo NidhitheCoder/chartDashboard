@@ -15,16 +15,15 @@ class FunctionView extends React.Component {
         <div className="row">
           <div className="col-lg-3">
             <PaymentCard 
-              icon="lnr lnr-bookmark"
               name="Program 1"
-              number="4512-XXXX-1678-7528"
-              type="VISA"
-              footer="Expires at 02/20"
+              number="8748-XXXX-1678-5416"
+              type="MASTERCARD"
+              footer="Expires at 03/22"
+
             />
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 2"
               number="8748-XXXX-1678-5416"
               type="MASTERCARD"
@@ -33,7 +32,6 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 3"
               number="spended"
               type="benefit 1"
@@ -42,7 +40,6 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 4"
               number="6546-XXXX-1678-1579"
               type="VISA"
@@ -57,7 +54,6 @@ class FunctionView extends React.Component {
         <div className="row">
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 1"
               number="4512-XXXX-1678-7528"
               type="VISA"
@@ -66,7 +62,6 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 2"
               number="8748-XXXX-1678-5416"
               type="MASTERCARD"
@@ -75,7 +70,6 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 3"
               number="spended"
               type="benefit 1"
@@ -84,7 +78,6 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 4"
               number="6546-XXXX-1678-1579"
               type="VISA"
@@ -99,7 +92,6 @@ class FunctionView extends React.Component {
         <div className="row">
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 1"
               number="4512-XXXX-1678-7528"
               type="VISA"
@@ -108,7 +100,6 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 2"
               number="8748-XXXX-1678-5416"
               type="MASTERCARD"
@@ -117,7 +108,6 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 3"
               number="spended"
               type="benefit 1"
@@ -126,7 +116,6 @@ class FunctionView extends React.Component {
           </div>
           <div className="col-lg-3">
             <PaymentCard
-              icon="lnr lnr-bookmark"
               name="Program 4"
               number="6546-XXXX-1678-1579"
               type="VISA"
