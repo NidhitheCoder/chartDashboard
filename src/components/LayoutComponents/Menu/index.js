@@ -4,10 +4,10 @@ import DrawerMenu from 'rc-drawer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import MenuLeft from './MenuLeft'
-import MenuTop from './MenuTop'
+// import MenuTop from './MenuTop'
 
 const mapStateToProps = ({ settings }) => ({
-  isMenuTop: settings.isMenuTop,
+  // isMenuTop: settings.isMenuTop,
   isMobileMenuOpen: settings.isMobileMenuOpen,
   isMobileView: settings.isMobileView,
   isLightTheme: settings.isLightTheme,
@@ -34,7 +34,8 @@ class AppMenu extends React.Component {
   }
 
   render() {
-    const { isMenuTop, isMobileMenuOpen, isMobileView, isLightTheme } = this.props
+    const { isMobileMenuOpen, isMobileView, isLightTheme } = this.props 
+ 
     const BootstrappedMenu = () => {
       if (isMobileView) {
         return (
@@ -50,9 +51,9 @@ class AppMenu extends React.Component {
           </DrawerMenu>
         )
       }
-      if (isMenuTop) {
-        return <MenuTop />
-      }
+      // if (isMenuTop) {
+      //   return <MenuTop />
+      // }
       return <MenuLeft />
     }
 

@@ -6,6 +6,7 @@ import store from 'store'
 import { Scrollbars } from 'react-custom-scrollbars'
 import _ from 'lodash'
 import styles from './style.module.scss'
+import Logo from './LogoTelcomsel.png'
 
 const { Sider } = Layout
 const { SubMenu, Divider } = Menu
@@ -208,8 +209,9 @@ class MenuLeft extends React.Component {
         <div className={styles.logo}>
           <div className={styles.logoContainer}>
             <img
-              src={`resources/images/logo-inverse${menuSettings.collapsed ? '-mobile' : ''}.png`}
-              alt=""
+              // src={`resources/images/logo-inverse${menuSettings.collapsed ? '-mobile' : ''}.png`}
+              src={Logo}
+              alt="telcomsel logo"
             />
           </div>
         </div>
@@ -240,19 +242,6 @@ class MenuLeft extends React.Component {
           >
             {menu}
           </Menu>
-          <div className={styles.buyPro}>
-            <p>
-              <strong>More components, more styles, more themes, and premium support!</strong>
-            </p>
-            <a
-              href="https://themeforest.net/item/clean-ui-react-admin-template/21938700"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-sm btn-danger"
-            >
-              Buy Bundle 26$
-            </a>
-          </div>
         </Scrollbars>
       </Sider>
     )
