@@ -31,13 +31,22 @@ class OverallSpendView extends React.Component {
     }
 
     const pieData = {
-      labels: ['Capex-CA', 'capex-CB', 'opex Dev','Opex-CRM', 'Opex-SO', 'Opex-ERP','Opex-SI', 'Opex-OH',],
-      text:'heiii',
+      labels: [
+        'Capex-CA',
+        'capex-CB',
+        'opex Dev',
+        'Opex-CRM',
+        'Opex-SO',
+        'Opex-ERP',
+        'Opex-SI',
+        'Opex-OH',
+      ],
+      text: 'heiii',
       datasets: [
         {
-          data: [500, 50, 100,30,59,98,100,30],
-          label:'orange',
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56','red','green','orange','blue'],
+          data: [500, 50, 100, 30, 59, 98, 100, 30],
+          label: 'orange',
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', 'red', 'green', 'orange', 'blue'],
           hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
         },
       ],
@@ -46,16 +55,20 @@ class OverallSpendView extends React.Component {
     const pieOptions = {}
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
-        <div className="col-lg-3" style={{float:'left'}}>
-          <h5 className="text-black">
-            <strong>Total spend</strong>
-          </h5>
-          <div className="mb-5">
-            <Radar data={radarData} options={radarOptions} width={400} height={400} />
+        <center>
+          <div className="col-lg-5">
+            <h5 className="text-black">
+              <strong>Total spend</strong>
+            </h5>
+            <div className="mb-5">
+              <Radar data={radarData} options={radarOptions} width={100} height={100} />
+            </div>
           </div>
-        </div>
-
-        <div className="col-lg-9" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr',gridRowGap:'5%',float:'right' }}>
+        </center>
+        <div
+          className="col-lg-12"
+          style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridRowGap: '5%' }}
+        >
           <div>
             <h5 className="text-black">
               <strong>
@@ -143,7 +156,6 @@ class OverallSpendView extends React.Component {
               <Pie data={pieData} options={pieOptions} width={400} height={200} />
             </div>
           </div>
-
         </div>
       </Authorize>
     )
