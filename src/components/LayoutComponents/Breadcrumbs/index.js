@@ -1,9 +1,24 @@
 import React from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { reduce } from 'lodash'
-// import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button'
 import styles from './style.module.scss'
+
+const btnPaths = [
+  {
+    path: '/dashboard/OverallSpendView',
+    title: 'Overall Spend',
+  },
+  {
+    path: '/dashboard/FunctionView',
+    title: 'Functional cost benefit',
+  },
+  {
+    path: '/dashboard/ProgramCostBenefit',
+    title: 'Program Cost benefit',
+  },
+]
 
 const mapStateToProps = ({ menu }) => ({
   isMenuTop: menu.isMenuTop,
@@ -14,25 +29,6 @@ const mapStateToProps = ({ menu }) => ({
 @withRouter
 @connect(mapStateToProps)
 class Breadcrumbs extends React.Component {
-  // state = {
-  //   breadcrumb: [],
-  // }
-
-  // componentDidMount() {
-  //   this.setBreadcrumbs(this.props)
-  // }
-
-  // componentWillReceiveProps(newProps) {
-  //   this.setBreadcrumbs(newProps)
-  // }
-
-  // setBreadcrumbs = props => {
-  //   const { isMenuTop, menuTopData, menuLeftData } = this.props
-  //   // this.setState({
-  //   //   breadcrumb: this.getBreadcrumb(props, isMenuTop ? menuTopData : menuLeftData),
-  //   // })
-  // }
-
   getPath(data, url, parents = []) {
     const items = reduce(
       data,
@@ -85,65 +81,29 @@ class Breadcrumbs extends React.Component {
     )
   }
 
+  goTo = path => {
+    const { history } = this.props
+    history.push(path)
+  }
+
   render() {
-    // const { breadcrumb } = this.state
+    const { location } = this.props
+
     return (
       <div
         className={styles.breadcrumbs}
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gridGap: '2%' }}
       >
-        <div className={styles.path}>
-          <NavLink to="/dashboard/OverallSpendView" activeStyle={{ backgroundColor: 'green' }}>
-            <span
-              style={{
-                backgroundColor: '#c7c4c4',
-                border: '1px solid darkgrey',
-                borderRadius: '4%',
-                paddingLeft: '3%',
-                paddingRight: '40%',
-              }}
-            >
-              Overall Spend
-            </span>
-          </NavLink>
-          {/* {breadcrumb} */}
-        </div>
-        <div className={styles.path}>
-          <NavLink
-            to="/dashboard/FunctionView"
-            activeStyle={{ backgroundColor: 'green' }}
-            style={{ color: '#555555' }}
-          >
-            <span
-              style={{
-                backgroundColor: '#c7c4c4',
-                border: '1px solid darkgrey',
-                borderRadius: '4%',
-                paddingLeft: '3%',
-                paddingRight: '15%',
-              }}
-            >
-              Functional cost benefit
-            </span>
-          </NavLink>
-          {/* {breadcrumb} */}
-        </div>
-        <div className={styles.path}>
-          <NavLink to="/dashboard/ProgramCostBenefit" activeStyle={{ backgroundColor: 'green' }}>
-            <span
-              style={{
-                backgroundColor: '#c7c4c4',
-                border: '1px solid darkgrey',
-                borderRadius: '4%',
-                paddingLeft: '3%',
-                paddingRight: '10%',
-              }}
-            >
-              Program Cost benefit
-            </span>
-          </NavLink>
-          {/* {breadcrumb} */}
-        </div>
+        {btnPaths.map(link => {
+          const clickAction = () => this.goTo(link.path)
+          const variant = location.pathname === link.path ? 'primary' : 'outline-primary'
+
+          return (
+            <Button className={styles.path} key={link.path} variant={variant} onClick={clickAction}>
+              {link.title}
+            </Button>
+          )
+        })}
       </div>
     )
   }
