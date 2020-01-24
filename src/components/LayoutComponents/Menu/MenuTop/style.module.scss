@@ -34,15 +34,16 @@
 }
 
 .logo {
-  height: 48px;
+  height: 60px;
   width: 200px;
-  background: $menuBg-darken;
+  // background: $menuBg-darken;
   float: left;
 }
 
 .logoContainer {
-  height: 48px;
+  height: 60px;
   padding: 9px 20px 0 17px;
+  width: 90px;
   img {
     height: 28px;
   }

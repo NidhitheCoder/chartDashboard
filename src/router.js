@@ -53,6 +53,11 @@ const routes = [
     exact: true,
   },
   {
+    path: '/dashboard/programCostBenefit',
+    component: loadable(() => import('pages/dashboard/programCostBenefit')),
+    exact: true,
+  },
+  {
     path: '/dashboard/chartjs',
     component: loadable(() => import('pages/dashboard/chartjs')),
     exact: true,
@@ -291,7 +296,7 @@ class Router extends React.Component {
       <ConnectedRouter history={history}>
         <IndexLayout>
           <Switch>
-            <Route exact path="/" render={() => <Redirect to="../OverallSpendView" />} />
+            <Route exact path="/" render={() => <Redirect to="/dashboard/OverallSpendView" />} />
             {routes.map(route => (
               <Route
                 path={route.path}

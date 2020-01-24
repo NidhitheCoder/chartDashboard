@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Menu } from 'antd'
 import { Link, withRouter } from 'react-router-dom'
-import store from 'store'
-import _ from 'lodash'
+// import store from 'store'
+// import _ from 'lodash'
 import styles from './style.module.scss'
+import Logo from './telkomsel.png'
 
 const { SubMenu, Divider } = Menu
 
@@ -17,54 +18,54 @@ const mapStateToProps = ({ menu, settings }) => ({
 @withRouter
 @connect(mapStateToProps)
 class MenuTop extends React.Component {
-  state = {
-    selectedKeys: store.get('app.menu.selectedKeys') || [],
-  }
+  // state = {
+  //   selectedKeys: store.get('app.menu.selectedKeys') || [],
+  // }
 
-  componentWillMount() {
-    this.setSelectedKeys(this.props)
-  }
+  // componentWillMount() {
+  //   this.setSelectedKeys(this.props)
+  // }
 
-  componentWillReceiveProps(newProps) {
-    this.setSelectedKeys(newProps)
-  }
+  // componentWillReceiveProps(newProps) {
+  //   this.setSelectedKeys(newProps)
+  // }
 
-  setSelectedKeys = props => {
-    const { menuData } = this.props
-    const flattenItems = (items, key) =>
-      items.reduce((flattenedItems, item) => {
-        flattenedItems.push(item)
-        if (Array.isArray(item[key])) {
-          return flattenedItems.concat(flattenItems(item[key], key))
-        }
-        return flattenedItems
-      }, [])
-    const selectedItem = _.find(flattenItems(menuData, 'children'), [
-      'url',
-      props.location.pathname,
-    ])
-    this.setState({
-      selectedKeys: selectedItem ? [selectedItem.key] : [],
-    })
-  }
+  // setSelectedKeys = props => {
+  //   // const { menuData } = this.props
+  //   // const flattenItems = (items, key) =>
+  //   //   items.reduce((flattenedItems, item) => {
+  //   //     flattenedItems.push(item)
+  //   //     if (Array.isArray(item[key])) {
+  //   //       return flattenedItems.concat(flattenItems(item[key], key))
+  //   //     }
+  //   //     return flattenedItems
+  //   //   }, [])
+  //   // const selectedItem = _.find(flattenItems(menuData, 'children'), [
+  //   //   'url',
+  //   //   props.location.pathname,
+  //   // ])
+  //   // this.setState({
+  //   //   selectedKeys: selectedItem ? [selectedItem.key] : [],
+  //   // })
+  // }
 
-  handleClick = e => {
-    const { dispatch, isSettingsOpen } = this.props
-    store.set('app.menu.selectedKeys', [e.key])
-    if (e.key === 'settings') {
-      dispatch({
-        type: 'settings/CHANGE_SETTING',
-        payload: {
-          setting: 'isSettingsOpen',
-          value: !isSettingsOpen,
-        },
-      })
-      return
-    }
-    this.setState({
-      selectedKeys: [e.key],
-    })
-  }
+  // handleClick = e => {
+  //   const { dispatch, isSettingsOpen } = this.props
+  //   store.set('app.menu.selectedKeys', [e.key])
+  //   if (e.key === 'settings') {
+  //     dispatch({
+  //       type: 'settings/CHANGE_SETTING',
+  //       payload: {
+  //         setting: 'isSettingsOpen',
+  //         value: !isSettingsOpen,
+  //       },
+  //     })
+  //     // return
+  //   }
+  //   // this.setState({
+  //   //   selectedKeys: [e.key],
+  //   // })
+  // }
 
   generateMenuItems = () => {
     const { menuData = [] } = this.props
@@ -136,23 +137,24 @@ class MenuTop extends React.Component {
   }
 
   render() {
-    const { selectedKeys } = this.state
-    const { isLightTheme } = this.props
+    // const { selectedKeys } = this.state
+    // const { isLightTheme } = this.props
     return (
       <div>
         <div className={styles.logo}>
           <div className={styles.logoContainer}>
-            <img src="resources/images/logo-inverse.png" alt="logo" />
+            <img src={Logo} alt="logo" style={{ width: '150px', height: '45px' }} />
           </div>
         </div>
-        <Menu
+        <h1>IT Project Dashboard</h1>
+        {/* <Menu
           theme={isLightTheme ? 'light' : 'dark'}
           onClick={this.handleClick}
           selectedKeys={selectedKeys}
           mode="horizontal"
         >
           {this.generateMenuItems()}
-        </Menu>
+        </Menu> */}
       </div>
     )
   }

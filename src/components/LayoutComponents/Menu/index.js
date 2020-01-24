@@ -4,7 +4,7 @@ import DrawerMenu from 'rc-drawer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 // import MenuLeft from './MenuLeft'
-// import MenuTop from './MenuTop'
+import MenuTop from './MenuTop'
 
 const mapStateToProps = ({ settings }) => ({
   // isMenuTop: settings.isMenuTop,
@@ -34,23 +34,25 @@ class AppMenu extends React.Component {
   }
 
   render() {
-    const { isMobileMenuOpen, isLightTheme } = this.props // isMobileView,
+    const { isMobileMenuOpen, isMobileView, isLightTheme } = this.props
 
     const BootstrappedMenu = () => {
-      // if (isMobileView) {
-      return (
-        <DrawerMenu
-          getContainer={null}
-          level={null}
-          style={{ display: 'none' }}
-          open={isMobileMenuOpen}
-          onMaskClick={this.toggleOpen}
-          onHandleClick={this.toggleOpen}
-          className={isLightTheme ? 'drawer-light' : ''}
-        >
-          {/* <MenuLeft /> */}
-        </DrawerMenu>
-      )
+      if (isMobileView) {
+        return (
+          <DrawerMenu
+            getContainer={null}
+            level={null}
+            style={{ display: 'none' }}
+            open={isMobileMenuOpen}
+            onMaskClick={this.toggleOpen}
+            onHandleClick={this.toggleOpen}
+            className={isLightTheme ? 'drawer-light' : ''}
+          >
+            {/* <MenuLeft /> */}
+          </DrawerMenu>
+        )
+      }
+      return <MenuTop />
       // }
 
       // if (isMenuTop) {

@@ -2,6 +2,7 @@ import React from 'react'
 // import { Helmet } from 'react-helmet'
 import Authorize from 'components/LayoutComponents/Authorize'
 import { Radar, Pie } from 'react-chartjs-2'
+// import canvasjs from 'assets/js/canvasjs.react'
 
 class OverallSpendView extends React.Component {
   render() {
@@ -56,14 +57,7 @@ class OverallSpendView extends React.Component {
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
         <center>
-          <div className="col-lg-5">
-            <h5 className="text-black">
-              <strong>Total spend</strong>
-            </h5>
-            <div className="mb-5">
-              <Radar data={radarData} options={radarOptions} width={100} height={100} />
-            </div>
-          </div>
+          <Radar data={radarData} options={radarOptions} width={400} height={200} />
         </center>
         <div
           style={{
