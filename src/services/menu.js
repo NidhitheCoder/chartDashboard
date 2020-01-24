@@ -1,6 +1,5 @@
 export async function getLeftMenuData() {
   return [
- 
     // {
     //   title: 'Documentation',
     //   key: 'documentation',
@@ -11,18 +10,17 @@ export async function getLeftMenuData() {
     // {
     //   divider: true,
     // },
-    // {
-    //   title: 'Dashboard Alpha with sample',
-    //   key: 'dashboardAlpha',
-    //   url: '/dashboard/alpha',
-    //   icon: 'icmn icmn-home',
-    // },
+    {
+      title: 'Dashboard Alpha with sample',
+      key: 'dashboardAlpha',
+      url: '/dashboard/alpha',
+      icon: 'icmn icmn-home',
+    },
     {
       title: 'Overall Spend View',
       key: 'DashboardNew',
       url: '/dashboard/OverallSpendView',
       icon: 'icmn icmn-home',
-
     },
     {
       title: 'Function View',
@@ -43,31 +41,37 @@ export async function getLeftMenuData() {
       icon: 'icmn icmn-file-text',
     },
     {
+      title: 'Chart View',
+      key: 'chartjs',
+      url: '/dashboard/chartjs',
+      icon: 'icmn icmn-file-text',
+    },
+    {
       title: 'Settings',
       key: 'settings',
       icon: 'icmn icmn-cog utils__spin-delayed--pseudo-selector',
     },
-    // {
-    //   title: 'Dashboard Beta',
-    //   key: 'dashboardBeta',
-    //   url: '/dashboard/beta',
-    //   icon: 'icmn icmn-home',
-    //   pro: true,
-    // },
-    // {
-    //   title: 'Dashboard Crypto',
-    //   key: 'dashboardCrypto',
-    //   url: '/dashboard/crypto',
-    //   icon: 'icmn icmn-home',
-    //   pro: true,
-    // },
-    // {
-    //   title: 'Dashboard Gamma',
-    //   key: 'dashboardGamma',
-    //   url: '/dashboard/gamma',
-    //   icon: 'icmn icmn-home',
-    //   pro: true,
-    // },
+    {
+      title: 'Dashboard Beta',
+      key: 'dashboardBeta',
+      url: '/dashboard/beta',
+      icon: 'icmn icmn-home',
+      pro: true,
+    },
+    {
+      title: 'Dashboard Crypto',
+      key: 'dashboardCrypto',
+      url: '/dashboard/crypto',
+      icon: 'icmn icmn-home',
+      pro: true,
+    },
+    {
+      title: 'Dashboard Gamma',
+      key: 'dashboardGamma',
+      url: '/dashboard/gamma',
+      icon: 'icmn icmn-home',
+      pro: true,
+    },
     // {
     //   title: 'Dashboard Docs',
     //   key: 'dashboardDocs',
@@ -130,43 +134,43 @@ export async function getLeftMenuData() {
     //     },
     //   ],
     // },
-    // {
-    //   title: 'Charts',
-    //   key: 'charts',
-    //   icon: 'icmn icmn-stats-bars',
-    //   children: [
-    //     {
-    //       title: 'Chartist',
-    //       key: 'chartist',
-    //       url: '/charts/chartist',
-    //     },
-    //     {
-    //       title: 'Chart',
-    //       key: 'chart',
-    //       url: '/charts/chart',
-    //       pro: true,
-    //     },
-    //     {
-    //       title: 'Peity',
-    //       key: 'peity',
-    //       url: '/charts/peity',
-    //       pro: true,
-    //     },
-    //     {
-    //       title: 'C3',
-    //       key: 'c3',
-    //       url: '/charts/c3',
-    //       pro: true,
-    //     },
-    //   ],
-    // },
-    // {
-    //   title: 'Mail Templates',
-    //   key: 'mailTemplates',
-    //   url: '/layout/mail-templates',
-    //   icon: 'icmn icmn-envelop',
-    //   pro: true,
-    // },
+    {
+      title: 'Charts',
+      key: 'charts',
+      icon: 'icmn icmn-stats-bars',
+      children: [
+        {
+          title: 'Chartist',
+          key: 'chartist',
+          url: '/charts/chartist',
+        },
+        {
+          title: 'Chart',
+          key: 'chart',
+          url: '/charts/chart',
+          pro: true,
+        },
+        {
+          title: 'Peity',
+          key: 'peity',
+          url: '/charts/peity',
+          pro: true,
+        },
+        {
+          title: 'C3',
+          key: 'c3',
+          url: '/charts/c3',
+          pro: true,
+        },
+      ],
+    },
+    {
+      title: 'Mail Templates',
+      key: 'mailTemplates',
+      url: '/layout/mail-templates',
+      icon: 'icmn icmn-envelop',
+      pro: true,
+    },
     // {
     //   divider: true,
     // },

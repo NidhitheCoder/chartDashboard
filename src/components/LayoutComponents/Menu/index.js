@@ -3,13 +3,13 @@ import React from 'react'
 import DrawerMenu from 'rc-drawer'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import MenuLeft from './MenuLeft'
+// import MenuLeft from './MenuLeft'
 // import MenuTop from './MenuTop'
 
 const mapStateToProps = ({ settings }) => ({
   // isMenuTop: settings.isMenuTop,
   isMobileMenuOpen: settings.isMobileMenuOpen,
-  isMobileView: settings.isMobileView,
+  // isMobileView: settings.isMobileView,
   isLightTheme: settings.isLightTheme,
 })
 
@@ -34,27 +34,29 @@ class AppMenu extends React.Component {
   }
 
   render() {
-    const { isMobileMenuOpen, isMobileView, isLightTheme } = this.props 
- 
+    const { isMobileMenuOpen, isLightTheme } = this.props // isMobileView,
+
     const BootstrappedMenu = () => {
-      if (isMobileView) {
-        return (
-          <DrawerMenu
-            getContainer={null}
-            level={null}
-            open={isMobileMenuOpen}
-            onMaskClick={this.toggleOpen}
-            onHandleClick={this.toggleOpen}
-            className={isLightTheme ? 'drawer-light' : ''}
-          >
-            <MenuLeft />
-          </DrawerMenu>
-        )
-      }
+      // if (isMobileView) {
+      return (
+        <DrawerMenu
+          getContainer={null}
+          level={null}
+          style={{ display: 'none' }}
+          open={isMobileMenuOpen}
+          onMaskClick={this.toggleOpen}
+          onHandleClick={this.toggleOpen}
+          className={isLightTheme ? 'drawer-light' : ''}
+        >
+          {/* <MenuLeft /> */}
+        </DrawerMenu>
+      )
+      // }
+
       // if (isMenuTop) {
       //   return <MenuTop />
       // }
-      return <MenuLeft />
+      // return <MenuLeft />
     }
 
     return BootstrappedMenu()

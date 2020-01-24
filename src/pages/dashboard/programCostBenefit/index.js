@@ -4,7 +4,7 @@ import Authorize from 'components/LayoutComponents/Authorize'
 import { Button } from 'antd'
 import PaymentCard from 'components/CleanUIComponents/PaymentCard'
 
-class FunctionView extends React.Component {
+class ProgramCostBenefit extends React.Component {
   render() {
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
@@ -102,4 +102,4 @@ class FunctionView extends React.Component {
   }
 }
 
-export default FunctionView
+export default ProgramCostBenefit

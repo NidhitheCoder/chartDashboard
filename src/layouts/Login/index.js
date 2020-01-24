@@ -28,7 +28,6 @@ class LoginLayout extends React.PureComponent {
   render() {
     const { children } = this.props
     const { backgroundNumber, backgroundEnabled } = this.state
-
     return (
       <Layout>
         <Layout.Content>
@@ -112,5 +111,4 @@ class LoginLayout extends React.PureComponent {
     )
   }
 }
-
 export default LoginLayout

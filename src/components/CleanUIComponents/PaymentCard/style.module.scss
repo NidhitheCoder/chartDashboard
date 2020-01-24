@@ -13,7 +13,34 @@
     color: $gray-darken;
   }
 }
-
+.circleY {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  float: right;
+  margin-top: 6px;
+  background-color: #ffd600;
+}
+.circleR {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  float: right;
+  margin-top: 6px;
+  background-color: #ef5350;
+}
+.circleG {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  float: right;
+  margin-top: 6px;
+  background-color: #00c853;
+}
+.dataValue {
+  float: right;
+  color: #000;
+}
 .name {
   display: block;
   text-align: center;

@@ -36,7 +36,10 @@ class ProjectView extends React.Component {
           if (amount === 'Not started') {
             return <span className="text-danger font-weight-bold">{amount}</span>
           }
-          return <span className="text-primary font-weight-bold">{amount}</span>
+          if (amount === 'Finished') {
+            return <span className="text-success font-weight-bold">{amount}</span>
+          }
+          return <span className="text-warning font-weight-bold">{amount}</span>
         },
       },
     ]
@@ -48,7 +51,6 @@ class ProjectView extends React.Component {
         [2e5, 4e5],
         [1e5, 2e5],
       ],
- 
     }
 
     const stackedBarOptions = {
@@ -57,7 +59,6 @@ class ProjectView extends React.Component {
         labelInterpolationFnc(value) {
           return `${value / 1e3}k`
         },
-       
       },
       plugins: [ChartistTooltip({ anchorToPoint: false, appendToBody: true, seriesName: false })],
     }

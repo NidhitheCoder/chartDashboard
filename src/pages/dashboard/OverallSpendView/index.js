@@ -66,9 +66,15 @@ class OverallSpendView extends React.Component {
           </div>
         </center>
         <div
-          style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridRowGap: '5%',padding:'5%' }}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            gridRowGap: '2%',
+            padding: '10%',
+            paddingLeft: '5%',
+          }}
         >
-          <div>
+          <div className="mb-5">
             <h5 className="text-black">
               <strong>
                 <center>Marketing</center>
@@ -79,7 +85,7 @@ class OverallSpendView extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="mb-5">
             <h5 className="text-black">
               <strong>
                 <center>Sales</center>
@@ -90,7 +96,7 @@ class OverallSpendView extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="mb-5">
             <h5 className="text-black">
               <strong>
                 <center>Finance</center>
@@ -101,7 +107,7 @@ class OverallSpendView extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="mb-2">
             <h5 className="text-black">
               <strong>
                 <center>HCM</center>
@@ -112,7 +118,7 @@ class OverallSpendView extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="mb-2">
             <h5 className="text-black">
               <strong>
                 <center>Network</center>
@@ -123,7 +129,7 @@ class OverallSpendView extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="mb-2">
             <h5 className="text-black">
               <strong>
                 <center>P & T</center>
@@ -134,7 +140,7 @@ class OverallSpendView extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="mb-5">
             <h5 className="text-black">
               <strong>
                 <center>CEO Office</center>
@@ -145,7 +151,7 @@ class OverallSpendView extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="mb-5">
             <h5 className="text-black">
               <strong>
                 <center>IT</center>

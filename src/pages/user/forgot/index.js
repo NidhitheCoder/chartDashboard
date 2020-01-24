@@ -28,7 +28,10 @@ class Forgot extends Component {
                       })(<Input size="default" />)}
                     </Form.Item>
                     <div className="mb-2">
-                      <Link to="/user/login" className="utils__link--blue utils__link--underlined">
+                      <Link
+                        to="pages/dashboard/OverallSpendView"
+                        className="utils__link--blue utils__link--underlined"
+                      >
                         Back to login
                       </Link>
                     </div>

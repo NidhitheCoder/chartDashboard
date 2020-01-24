@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { reduce } from 'lodash'
+// import Button from 'react-bootstrap/Button'
 import styles from './style.module.scss'
 
 const mapStateToProps = ({ menu }) => ({
@@ -13,24 +14,24 @@ const mapStateToProps = ({ menu }) => ({
 @withRouter
 @connect(mapStateToProps)
 class Breadcrumbs extends React.Component {
-  state = {
-    breadcrumb: [],
-  }
+  // state = {
+  //   breadcrumb: [],
+  // }
 
-  componentDidMount() {
-    this.setBreadcrumbs(this.props)
-  }
+  // componentDidMount() {
+  //   this.setBreadcrumbs(this.props)
+  // }
 
-  componentWillReceiveProps(newProps) {
-    this.setBreadcrumbs(newProps)
-  }
+  // componentWillReceiveProps(newProps) {
+  //   this.setBreadcrumbs(newProps)
+  // }
 
-  setBreadcrumbs = props => {
-    const { isMenuTop, menuTopData, menuLeftData } = this.props
-    this.setState({
-      breadcrumb: this.getBreadcrumb(props, isMenuTop ? menuTopData : menuLeftData),
-    })
-  }
+  // setBreadcrumbs = props => {
+  //   const { isMenuTop, menuTopData, menuLeftData } = this.props
+  //   // this.setState({
+  //   //   breadcrumb: this.getBreadcrumb(props, isMenuTop ? menuTopData : menuLeftData),
+  //   // })
+  // }
 
   getPath(data, url, parents = []) {
     const items = reduce(
@@ -85,14 +86,63 @@ class Breadcrumbs extends React.Component {
   }
 
   render() {
-    const { breadcrumb } = this.state
+    // const { breadcrumb } = this.state
     return (
-      <div className={styles.breadcrumbs}>
+      <div
+        className={styles.breadcrumbs}
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gridGap: '2%' }}
+      >
         <div className={styles.path}>
-          <Link to="/dashboard/OverallSpendView" className="text-muted">
-            Home
-          </Link>
-          {breadcrumb}
+          <NavLink to="/dashboard/OverallSpendView" activeStyle={{ backgroundColor: 'green' }}>
+            <span
+              style={{
+                backgroundColor: '#c7c4c4',
+                border: '1px solid darkgrey',
+                borderRadius: '4%',
+                paddingLeft: '3%',
+                paddingRight: '40%',
+              }}
+            >
+              Overall Spend
+            </span>
+          </NavLink>
+          {/* {breadcrumb} */}
+        </div>
+        <div className={styles.path}>
+          <NavLink
+            to="/dashboard/FunctionView"
+            activeStyle={{ backgroundColor: 'green' }}
+            style={{ color: '#555555' }}
+          >
+            <span
+              style={{
+                backgroundColor: '#c7c4c4',
+                border: '1px solid darkgrey',
+                borderRadius: '4%',
+                paddingLeft: '3%',
+                paddingRight: '15%',
+              }}
+            >
+              Functional cost benefit
+            </span>
+          </NavLink>
+          {/* {breadcrumb} */}
+        </div>
+        <div className={styles.path}>
+          <NavLink to="/dashboard/ProgramView" activeStyle={{ backgroundColor: 'green' }}>
+            <span
+              style={{
+                backgroundColor: '#c7c4c4',
+                border: '1px solid darkgrey',
+                borderRadius: '4%',
+                paddingLeft: '3%',
+                paddingRight: '10%',
+              }}
+            >
+              Program Cost benefit
+            </span>
+          </NavLink>
+          {/* {breadcrumb} */}
         </div>
       </div>
     )

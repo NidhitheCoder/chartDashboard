@@ -5,7 +5,7 @@ import NProgress from 'nprogress'
 import { Helmet } from 'react-helmet'
 import Loader from 'components/LayoutComponents/Loader'
 import PublicLayout from './Public'
-import LoginLayout from './Login'
+import LoginLayout from '../pages/user/login'
 import MainLayout from './Main'
 
 const Layouts = {
@@ -33,18 +33,15 @@ class IndexLayout extends React.PureComponent {
       location: { pathname, search },
       user,
     } = this.props
-
     // NProgress Management
     const currentPath = pathname + search
     if (currentPath !== this.previousPath) {
       NProgress.start()
     }
-
     setTimeout(() => {
       NProgress.done()
       this.previousPath = currentPath
     }, 300)
-
     // Layout Rendering
     const getLayout = () => {
       if (pathname === '/') {
@@ -55,12 +52,10 @@ class IndexLayout extends React.PureComponent {
       }
       return 'main'
     }
-
     const Container = Layouts[getLayout()]
     const isUserAuthorized = user.authorized
     const isUserLoading = user.loading
     const isLoginLayout = getLayout() === 'login'
-
     const BootstrappedLayout = () => {
       // show loader when user in check authorization process, not authorized yet and not on login pages
       if (isUserLoading && !isUserAuthorized && !isLoginLayout) {
@@ -77,14 +72,12 @@ class IndexLayout extends React.PureComponent {
       // in other case render previously set layout
       return <Container>{children}</Container>
     }
-
     return (
       <Fragment>
-        <Helmet titleTemplate="Clean UI React Pro | %s" title="React Admin Template" />
+        <Helmet titleTemplate="TELKOMSEL | %s" title="PT Telekomunikasi Selular" />
         {BootstrappedLayout()}
       </Fragment>
     )
   }
 }
-
 export default IndexLayout
