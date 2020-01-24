@@ -140,13 +140,13 @@ class MenuTop extends React.Component {
     // const { selectedKeys } = this.state
     // const { isLightTheme } = this.props
     return (
-      <div>
+      <div className={styles.container}>
         <div className={styles.logo}>
           <div className={styles.logoContainer}>
             <img src={Logo} alt="logo" style={{ width: '150px', height: '45px' }} />
           </div>
         </div>
-        <h1>IT Project Dashboard</h1>
+        <h1 className={styles.title}>IT Project Dashboard</h1>
         {/* <Menu
           theme={isLightTheme ? 'light' : 'dark'}
           onClick={this.handleClick}
