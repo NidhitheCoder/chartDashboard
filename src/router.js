@@ -291,7 +291,7 @@ class Router extends React.Component {
       <ConnectedRouter history={history}>
         <IndexLayout>
           <Switch>
-            <Route exact path="/" render={() => <Redirect to="../OverallSpendView" />} />
+            <Route exact path="/" render={() => <Redirect to="/dashboard/OverallSpendView" />} />
             {routes.map(route => (
               <Route
                 path={route.path}
