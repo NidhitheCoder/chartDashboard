@@ -3,6 +3,9 @@ import React from 'react'
 import Authorize from 'components/LayoutComponents/Authorize'
 import { Radar, Pie } from 'react-chartjs-2'
 
+import canvasjs from 'assets/js/canvasjs.react'
+import waterfallChartData from './waterfall-data'
+
 class OverallSpendView extends React.Component {
   render() {
     const radarData = {
@@ -53,8 +56,14 @@ class OverallSpendView extends React.Component {
     }
 
     const pieOptions = {}
+
+    const { CanvasJSChart } = canvasjs
+
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
+        <center>
+          <CanvasJSChart options={waterfallChartData} />
+        </center>
         <center>
           <div className="col-lg-5">
             <h5 className="text-black">
