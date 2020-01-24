@@ -3,6 +3,7 @@ import Authorize from 'components/LayoutComponents/Authorize'
 
 import canvasjs from 'assets/js/canvasjs.react'
 import { chartsData } from './waterfall-data'
+import styles from './styles.module.scss'
 
 class OverallSpendView extends React.Component {
   render() {
@@ -12,7 +13,9 @@ class OverallSpendView extends React.Component {
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '5%' }}>
           {chartsData.map(chart => (
-            <CanvasJSChart key={Math.random()} options={chart} />
+            <div className={`card card--withShadow ${styles.chartCard}`}>
+              <CanvasJSChart key={Math.random()} options={chart} />
+            </div>
           ))}
         </div>
       </Authorize>

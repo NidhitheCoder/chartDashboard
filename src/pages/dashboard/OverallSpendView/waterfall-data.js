@@ -1,9 +1,26 @@
 // https://canvasjs.com/docs/charts/chart-options/
 
+const baseData = {
+  type: 'waterfall',
+  yValueFormatString: '$',
+  indexLabelOrientation: 'vertical',
+  dataPoints: [
+    { label: 'Total', y: 460 },
+    { label: 'Marketing', y: -78 },
+    { label: 'Sales', y: -60 },
+    { label: 'Finance', y: -90 },
+    { label: 'HCM', y: -81 },
+    { label: 'Network', y: -24 },
+    { label: 'P & T', y: -54 },
+    { label: 'CEO Office', y: -20 },
+    { label: 'IT', y: -50 },
+  ],
+}
+
 export const waterfallChartData = {
   animationEnabled: true,
   exportEnabled: false,
-  backgroundColor: '#fffcf5',
+  backgroundColor: '#fff',
   title: {
     text: 'Capex- Cat A',
     fontSize: 20,
@@ -11,35 +28,21 @@ export const waterfallChartData = {
   },
   axisX: {
     title: 'Departments',
-    margin: 5,
     titleFontSize: 16,
     labelFontSize: 12,
+    titleFontFamily: 'Roboto Condensed',
+    labelAngle: -45,
+    labelFontColor: '#666',
   },
   axisY: {
     title: 'Spend',
-    margin: 15,
     titleFontSize: 16,
     valueFormatString: '#,##0.##M',
     labelFontSize: 12,
+    titleFontFamily: 'Roboto Condensed',
+    labelFontColor: '#666',
   },
-  data: [
-    {
-      type: 'waterfall',
-      yValueFormatString: '$',
-      indexLabelOrientation: 'vertical',
-      dataPoints: [
-        { label: 'Total', y: 460 },
-        { label: 'Marketing', y: -78 },
-        { label: 'Sales', y: -60 },
-        { label: 'Finance', y: -90 },
-        { label: 'HCM', y: -81 },
-        { label: 'Network', y: -24 },
-        { label: 'P & T', y: -54 },
-        { label: 'CEO Office', y: -20 },
-        { label: 'IT', y: -50 },
-      ],
-    },
-  ],
+  data: [{ ...baseData }],
 }
 
 const chart1 = { ...waterfallChartData }
@@ -51,9 +54,7 @@ const chart2 = {
   },
   data: [
     {
-      type: 'waterfall',
-      yValueFormatString: '$',
-      indexLabelOrientation: 'vertical',
+      ...baseData,
       dataPoints: [
         { label: 'Total', y: 770 },
         { label: 'Marketing', y: -48 },
@@ -76,17 +77,15 @@ const chart3 = {
   },
   data: [
     {
-      type: 'waterfall',
-      yValueFormatString: '$',
-      indexLabelOrientation: 'vertical',
+      ...baseData,
       dataPoints: [
         { label: 'Total', y: 860 },
         { label: 'Marketing', y: -78 },
         { label: 'Sales', y: -110 },
         { label: 'Finance', y: -270 },
-        { label: 'HCM', y: -81 },
-        { label: 'Network', y: -124 },
-        { label: 'P & T', y: -84 },
+        { label: 'HCM', y: -80 },
+        { label: 'Network', y: -120 },
+        { label: 'P & T', y: -80 },
         { label: 'CEO Office', y: -70 },
         { label: 'IT', y: -50 },
       ],
@@ -101,9 +100,7 @@ const chart4 = {
   },
   data: [
     {
-      type: 'waterfall',
-      yValueFormatString: '$',
-      indexLabelOrientation: 'vertical',
+      ...baseData,
       dataPoints: [
         { label: 'Total', y: 860 },
         { label: 'Marketing', y: -278 },
