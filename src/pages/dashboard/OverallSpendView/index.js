@@ -1,63 +1,85 @@
 import React from 'react'
 // import { Helmet } from 'react-helmet'
 import Authorize from 'components/LayoutComponents/Authorize'
-import { Radar, Pie } from 'react-chartjs-2'
+// import { Radar, Pie } from 'react-chartjs-2'
 // import canvasjs from 'assets/js/canvasjs.react'
+
+import canvasjs from 'assets/js/canvasjs.react'
+import waterfallChartData from './waterfall-data'
+// import waterfallChartDataB from './waterfall-dataB'
+// import waterfallChartDataC from './waterfall-dataC'
+// import waterfallChartDataD from './waterfall-dataD'
 
 class OverallSpendView extends React.Component {
   render() {
-    const radarData = {
-      labels: ['Marketing', 'Sales', 'Finance', 'HCM', 'Network', 'P & T', 'CEO Office', 'IT'],
-      datasets: [
-        {
-          label: 'Total Spend',
-          backgroundColor: 'rgba(0,255,0,0.2)',
-          borderColor: 'rgba(0,255,0,1)',
-          pointBackgroundColor: 'rgba(179,181,198,1)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(179,181,198,1)',
-          data: [78, 59, 90, 81, 23, 55, 20, 50],
-        },
-      ],
-    }
+    // const radarData = {
+    //   labels: ['Marketing', 'Sales', 'Finance', 'HCM', 'Network', 'P & T', 'CEO Office', 'IT'],
+    //   datasets: [
+    //     {
+    //       label: 'Total Spend',
+    //       backgroundColor: 'rgba(0,255,0,0.2)',
+    //       borderColor: 'rgba(0,255,0,1)',
+    //       pointBackgroundColor: 'rgba(179,181,198,1)',
+    //       pointBorderColor: '#fff',
+    //       pointHoverBackgroundColor: '#fff',
+    //       pointHoverBorderColor: 'rgba(179,181,198,1)',
+    //       data: [78, 59, 90, 81, 23, 55, 20, 50],
+    //     },
+    //   ],
+    // }
 
-    const radarOptions = {
-      scale: {
-        reverse: true,
-        ticks: {
-          beginAtZero: true,
-        },
-      },
-    }
+    // const radarOptions = {
+    //   scale: {
+    //     reverse: true,
+    //     ticks: {
+    //       beginAtZero: true,
+    //     },
+    //   },
+    // }
 
-    const pieData = {
-      labels: [
-        'Capex-CA',
-        'capex-CB',
-        'opex Dev',
-        'Opex-CRM',
-        'Opex-SO',
-        'Opex-ERP',
-        'Opex-SI',
-        'Opex-OH',
-      ],
-      text: 'heiii',
-      datasets: [
-        {
-          data: [500, 50, 100, 30, 59, 98, 100, 30],
-          label: 'orange',
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', 'red', 'green', 'orange', 'blue'],
-          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-        },
-      ],
-    }
+    // const pieData = {
+    //   labels: [
+    //     'Capex-CA',
+    //     'capex-CB',
+    //     'opex Dev',
+    //     'Opex-CRM',
+    //     'Opex-SO',
+    //     'Opex-ERP',
+    //     'Opex-SI',
+    //     'Opex-OH',
+    //   ],
+    //   text: 'heiii',
+    //   datasets: [
+    //     {
+    //       data: [500, 50, 100, 30, 59, 98, 100, 30],
+    //       label: 'orange',
+    //       backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', 'red', 'green', 'orange', 'blue'],
+    //       hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+    //     },
+    //   ],
+    // }
 
-    const pieOptions = {}
+    // const pieOptions = {}
+
+    const { CanvasJSChart } = canvasjs
+
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
-        <center>
-          <Radar data={radarData} options={radarOptions} width={400} height={200} />
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '5%' }}>
+          <CanvasJSChart options={waterfallChartData} />
+          <CanvasJSChart options={waterfallChartData} />
+          <CanvasJSChart options={waterfallChartData} />
+          <CanvasJSChart options={waterfallChartData} />
+        </div>
+        {/* <center>
+          <div className="col-lg-5">
+            <h5 className="text-black">
+              <strong>Total spend</strong>
+            </h5>
+            <div className="mb-5">
+              <Radar data={radarData} options={radarOptions} width={100} height={100} />
+            </div>
+          </div>
         </center>
         <div
           style={{
@@ -155,7 +177,7 @@ class OverallSpendView extends React.Component {
               <Pie data={pieData} options={pieOptions} width={400} height={200} />
             </div>
           </div>
-        </div>
+        </div> */}
       </Authorize>
     )
   }

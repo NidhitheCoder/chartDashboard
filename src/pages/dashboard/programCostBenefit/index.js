@@ -7,7 +7,7 @@ class ProgramCostBenefit extends React.Component {
   render() {
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
-        <strong className=" font-size-16">Program B</strong>
+        <strong className=" font-size-16">Program A</strong>
         <div className="row">
           <div className="col-lg-4">
             <ProjectCard
