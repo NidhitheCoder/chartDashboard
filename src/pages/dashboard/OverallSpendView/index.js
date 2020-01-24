@@ -5,10 +5,10 @@ import Authorize from 'components/LayoutComponents/Authorize'
 // import canvasjs from 'assets/js/canvasjs.react'
 
 import canvasjs from 'assets/js/canvasjs.react'
-import waterfallChartData from './waterfall-data'
-// import waterfallChartDataB from './waterfall-dataB'
-// import waterfallChartDataC from './waterfall-dataC'
-// import waterfallChartDataD from './waterfall-dataD'
+import waterfallChartData1 from './waterfall-data1'
+import waterfallChartData2 from './waterfall-data2'
+import waterfallChartData3 from './waterfall-data3'
+import waterfallChartData4 from './waterfall-data4'
 
 class OverallSpendView extends React.Component {
   render() {
@@ -66,10 +66,10 @@ class OverallSpendView extends React.Component {
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '5%' }}>
-          <CanvasJSChart options={waterfallChartData} />
-          <CanvasJSChart options={waterfallChartData} />
-          <CanvasJSChart options={waterfallChartData} />
-          <CanvasJSChart options={waterfallChartData} />
+          <CanvasJSChart options={waterfallChartData1} />
+          <CanvasJSChart options={waterfallChartData2} />
+          <CanvasJSChart options={waterfallChartData3} />
+          <CanvasJSChart options={waterfallChartData4} />
         </div>
         {/* <center>
           <div className="col-lg-5">

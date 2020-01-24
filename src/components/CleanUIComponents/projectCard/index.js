@@ -1,6 +1,7 @@
 import React from 'react'
 import ChartistGraph from 'react-chartist'
 import ChartistTooltip from 'chartist-plugin-tooltips-updated'
+import { NavLink } from 'react-router-dom'
 import styles from './style.module.scss'
 
 class ProjectCard extends React.Component {
@@ -55,7 +56,7 @@ class ProjectCard extends React.Component {
         )}
         {name && (
           <span className={styles.name} style={inStyles.left}>
-            {name}
+            <NavLink to="/dashboard/ProjectView">{name}</NavLink>
             <div className={styles.circleY}>&nbsp;</div>
           </span>
         )}

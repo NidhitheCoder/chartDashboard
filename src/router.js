@@ -48,6 +48,11 @@ const routes = [
     exact: true,
   },
   {
+    path: '/dashboard/ProjectViewold',
+    component: loadable(() => import('pages/dashboard/ProjectViewold')),
+    exact: true,
+  },
+  {
     path: '/dashboard/ProjectView',
     component: loadable(() => import('pages/dashboard/ProjectView')),
     exact: true,
