@@ -4,7 +4,7 @@ const baseData = {
   type: 'waterfall',
   yValueFormatString: '$',
   indexLabelOrientation: 'vertical',
-  fallingColor: '#F79B8E',
+  fallingColor: '#58a7be',
   risingColor: '#4c83cf',
   dataPoints: [
     { label: 'Total', y: 460 },
