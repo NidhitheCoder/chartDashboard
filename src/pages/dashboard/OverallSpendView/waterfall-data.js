@@ -19,12 +19,16 @@ const baseData = {
 
 export const waterfallChartData = {
   animationEnabled: true,
+  animationDuration: 800,
   exportEnabled: false,
   backgroundColor: '#fff',
+  theme: 'light2',
   title: {
     text: 'Capex- Cat A',
     fontSize: 20,
     padding: 10,
+    fontFamily: 'Roboto Condensed',
+    fontWeight: 'bolder',
   },
   axisX: {
     title: 'Departments',
@@ -41,6 +45,7 @@ export const waterfallChartData = {
     labelFontSize: 12,
     titleFontFamily: 'Roboto Condensed',
     labelFontColor: '#666',
+    gridColor: '#ddd',
   },
   data: [{ ...baseData }],
 }
