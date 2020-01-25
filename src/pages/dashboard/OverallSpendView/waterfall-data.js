@@ -4,6 +4,8 @@ const baseData = {
   type: 'waterfall',
   yValueFormatString: '$',
   indexLabelOrientation: 'vertical',
+  fallingColor: '#F79B8E',
+  risingColor: '#4c83cf',
   dataPoints: [
     { label: 'Total', y: 460 },
     { label: 'Marketing', y: -78 },
@@ -46,6 +48,13 @@ export const waterfallChartData = {
     titleFontFamily: 'Roboto Condensed',
     labelFontColor: '#666',
     gridColor: '#ddd',
+  },
+  toolTip: {
+    shared: true,
+    contentFormatter: e => {
+      const multiplier = e.entries[0].dataPoint.label === 'Total' ? 1 : -1
+      return `${e.entries[0].dataPoint.label} ${e.entries[0].dataPoint.y * multiplier} M$`
+    },
   },
   data: [{ ...baseData }],
 }
