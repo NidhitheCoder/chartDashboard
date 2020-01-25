@@ -39,7 +39,7 @@ class ProgramCard extends React.Component {
             <span
               className={cn(
                 styles.type,
-                npsScore > 0 ? styles.positiveValue : styles.negativeValue,
+                npsScore >= 0 ? styles.positiveValue : styles.negativeValue,
               )}
             >
               {npsScore}%
@@ -50,7 +50,7 @@ class ProgramCard extends React.Component {
             <span
               className={cn(
                 styles.value,
-                revenueUplift > 0 ? styles.positiveValue : styles.negativeValue,
+                revenueUplift >= 0 ? styles.positiveValue : styles.negativeValue,
               )}
             >
               {revenueUplift} %
@@ -58,7 +58,12 @@ class ProgramCard extends React.Component {
           </span>
           <span className={styles.typeContainer}>
             <div className={styles.type}>Cost Savings</div>
-            <span className={cn(styles.value, { [styles.negativeValue]: costSavings < 0 })}>
+            <span
+              className={cn(
+                styles.value,
+                costSavings < 0 ? styles.negativeValue : styles.positiveValue,
+              )}
+            >
               {costSavings} $
             </span>
           </span>
