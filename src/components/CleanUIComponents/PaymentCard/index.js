@@ -26,7 +26,7 @@ class PaymentCard extends React.Component {
 
   render() {
     const horizontalData = {
-      labels: ['Spent'],
+      labels: ['Spend'],
       series: [[5], [3]],
     }
     const horizontalOptions = {
@@ -43,6 +43,7 @@ class PaymentCard extends React.Component {
       left: {
         float: 'left',
         textAlign: 'left',
+        fontSize: 20,
       },
     }
     return (
@@ -61,10 +62,9 @@ class PaymentCard extends React.Component {
         )}
         {number && (
           <span className={styles.number}>
-            Spend{' '}
             <ChartistGraph
               type="Bar"
-              style={{ width: '85%', float: 'right' }}
+              style={{ width: '85%', float: 'center' }}
               data={horizontalData}
               options={horizontalOptions}
             />
@@ -80,6 +80,9 @@ class PaymentCard extends React.Component {
             Revenue Uplift <div className={styles.dataValue}>+8%</div>
           </div>
         )}
+        <div className={styles.footer} style={inStyles.left}>
+          Cost Savings <div className={styles.dataValue}>$170,000</div>
+        </div>
       </a>
     )
   }
