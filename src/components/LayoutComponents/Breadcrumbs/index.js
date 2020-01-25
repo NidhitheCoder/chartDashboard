@@ -1,24 +1,8 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { reduce } from 'lodash'
-import Button from 'react-bootstrap/Button'
 import styles from './style.module.scss'
-
-const btnPaths = [
-  {
-    path: '/dashboard/OverallSpendView',
-    title: 'Overall Spend',
-  },
-  {
-    path: '/dashboard/FunctionView',
-    title: 'Functional cost benefit',
-  },
-  {
-    path: '/dashboard/ProgramCostBenefit',
-    title: 'Program Cost benefit',
-  },
-]
 
 const mapStateToProps = ({ menu }) => ({
   isMenuTop: menu.isMenuTop,
@@ -29,6 +13,25 @@ const mapStateToProps = ({ menu }) => ({
 @withRouter
 @connect(mapStateToProps)
 class Breadcrumbs extends React.Component {
+  state = {
+    breadcrumb: [],
+  }
+
+  componentDidMount() {
+    this.setBreadcrumbs(this.props)
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setBreadcrumbs(newProps)
+  }
+
+  setBreadcrumbs = props => {
+    const { isMenuTop, menuTopData, menuLeftData } = this.props
+    this.setState({
+      breadcrumb: this.getBreadcrumb(props, isMenuTop ? menuTopData : menuLeftData),
+    })
+  }
+
   getPath(data, url, parents = []) {
     const items = reduce(
       data,
@@ -81,29 +84,16 @@ class Breadcrumbs extends React.Component {
     )
   }
 
-  goTo = path => {
-    const { history } = this.props
-    history.push(path)
-  }
-
   render() {
-    const { location } = this.props
-
+    const { breadcrumb } = this.state
     return (
-      <div
-        className={styles.breadcrumbs}
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gridGap: '2%' }}
-      >
-        {btnPaths.map(link => {
-          const clickAction = () => this.goTo(link.path)
-          const variant = location.pathname === link.path ? 'primary' : 'outline-primary'
-
-          return (
-            <Button className={styles.path} key={link.path} variant={variant} onClick={clickAction}>
-              {link.title}
-            </Button>
-          )
-        })}
+      <div className={styles.breadcrumbs}>
+        <div className={styles.path}>
+          <Link to="/dashboard/alpha" className="text-muted">
+            Home
+          </Link>
+          {breadcrumb}
+        </div>
       </div>
     )
   }

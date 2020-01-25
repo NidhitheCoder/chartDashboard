@@ -4,6 +4,9 @@ import localeData from 'react-intl/locale-data/en'
 const messages = {
   'topBar.issuesHistory': 'Issues History',
   'topBar.projectManagement': 'Project Management',
+  'topBar.overallSpendView': 'Overall Spend View',
+  'topBar.functionView': 'Function View',
+  'topBar.projectView': 'Project View',
   'topBar.typeToSearch': 'Type to search...',
   'topBar.buyNow': 'Buy Bundle $26',
   'topBar.bitcoin': 'Bitcoin',
