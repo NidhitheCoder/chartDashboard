@@ -6,6 +6,7 @@ import PaymentAccount from 'components/CleanUIComponents/PaymentAccount'
 import PaymentTransaction from 'components/CleanUIComponents/PaymentTransaction'
 import ChartCard from 'components/CleanUIComponents/ChartCard'
 import Authorize from 'components/LayoutComponents/Authorize'
+
 import { tableData } from './data.json'
 
 class DashboardAlpha extends React.Component {
@@ -178,7 +179,6 @@ class DashboardAlpha extends React.Component {
               sum="$1,467,98"
             />
           </div>
-       
         </div>
         <div className="utils__title utils__title--flat mb-3">
           <strong className="text-uppercase font-size-16">Your Accounts (6)</strong>
