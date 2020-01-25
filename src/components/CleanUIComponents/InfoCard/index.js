@@ -36,7 +36,7 @@ class InfoCard extends React.Component {
               <span className="pull-right font-size-36">
                 <strong>{commerceStats.count}</strong>
               </span>
-              {icon !== false && <i className={`font-size-36 icmn-${icon}`} />}
+              {icon !== false && <i className={`font-size-36 text-center icmn-${icon}`} />}
             </div>
           </div>
         )}

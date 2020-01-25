@@ -1,46 +1,51 @@
 import React from 'react'
-// import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import Authorize from 'components/LayoutComponents/Authorize'
 import ChartistGraph from 'react-chartist'
 import ChartistTooltip from 'chartist-plugin-tooltips-updated'
-import Donut from 'components/CleanUIComponents/Donut'
+import ProgressGroup from 'components/CleanUIComponents/CustomProgressGroup'
+import InfoCard from 'components/CleanUIComponents/InfoCard'
 import { Table } from 'antd'
-import styles from './style.module.scss'
-import { supportCasesTableData, supportCasesPieData } from './data.json'
+import {taskTableData } from './data.json'
 
 class ProjectView extends React.Component {
+
+  state = {
+    taskTableSelectedRowKeys: []
+  }
+
+  // Task Table Settings //
+  onSelectChange = taskTableSelectedRowKeys => {
+    this.setState({ taskTableSelectedRowKeys })
+  }
+
+
   render() {
-    const supportCasesPieOptions = {
-      donut: true,
-      donutWidth: 35,
-      showLabel: false,
-      plugins: [
-        ChartistTooltip({
-          anchorToPoint: false,
-          appendToBody: true,
-          seriesName: false,
-        }),
-      ],
+    const {
+      taskTableSelectedRowKeys
+    } = this.state
+
+    // Task Table Settings //
+    const taskTableRowSelection = {
+      taskTableSelectedRowKeys,
+      onChange: this.onSelectChange,
     }
-    const supportCasesTableColumns = [
+
+    const taskTableColumns = [
       {
-        title: 'Feature',
-        dataIndex: 'type',
-        key: 'type',
+        title: 'Task',
+        dataIndex: 'name',
+        render: text => <a href="javascript: void(0);">{text}</a>,
+      },
+      {
+        title: 'Contact Person',
+        dataIndex: 'username',
+        render: text => <a href="javascript: void(0);">{text}</a>,
       },
       {
         title: 'Status',
-        key: 'amount',
-        dataIndex: 'amount',
-        render: amount => {
-          if (amount === 'Not started') {
-            return <span className="text-danger font-weight-bold">{amount}</span>
-          }
-          if (amount === 'Finished') {
-            return <span className="text-success font-weight-bold">{amount}</span>
-          }
-          return <span className="text-warning font-weight-bold">{amount}</span>
-        },
+        dataIndex: 'status',
+        render: text => <a href="javascript: void(0);">{text}</a>
       },
     ]
 
@@ -65,52 +70,58 @@ class ProjectView extends React.Component {
 
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
+        <Helmet title="B2B Connectivity" />
         <div className="row">
-          <div className="col-lg-6">
-            <div className="card card--fullHeight">
+          <div className="col-lg-9">
+            <div className="card">
               <div className="card-header">
-                <h4>
-                  <strong>Vendor : ABC Company</strong>
-                </h4>{' '}
-                <br />
-                <div className="utils__title utils__title--flat">
-                  <strong className="text-uppercase font-size-16">Features</strong>
+                <div className="utils__title">
+                  <strong>Product Progress</strong>
+                </div>
+                <div className="utils__titleDescription">
+                  Block with important Work Progress information
                 </div>
               </div>
               <div className="card-body">
                 <div className="row">
-                  <div className="col-xl-6">
-                    <div className="mb-3">
-                      <Table
-                        className="utils__scrollTable"
-                        scroll={{ x: '100%' }}
-                        dataSource={supportCasesTableData}
-                        columns={supportCasesTableColumns}
-                        pagination={false}
-                      />
-                    </div>
+                  <div className="col-xl-12">
+                    <ProgressGroup />
                   </div>
-                  <div className="col-xl-6">
-                    <div
-                      className={`h-100 d-flex flex-column justify-content-center align-items-center ${styles.chartPieExample}`}
-                    >
-                      <ChartistGraph
-                        data={supportCasesPieData}
-                        type="Pie"
-                        options={supportCasesPieOptions}
-                      />
-                      <div className="text-center">
-                        <span className="mr-2">
-                          <Donut type="success" name="Finished" />
-                        </span>
-                        <span className="mr-2">
-                          <Donut type="warning" name="In progress" />
-                        </span>
-                        <span className="mr-2">
-                          <Donut type="danger" name="Not started" />
-                        </span>
-                      </div>
-                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 noPadding">
+            <div className="card-body">
+              <div className="row">
+                <InfoCard form="stats-large" icon="calendar" btnType="success" type="success" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="card">
+              <div className="card-header">
+                <div className="utils__title">
+                  <strong>Development Status Table</strong>
+                </div>
+                <div className="utils__titleDescription">
+                  Important product areas and contact person
+                </div>
+              </div>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <Table
+                      className="utils__scrollTable"
+                      scroll={{ x: '100%' }}
+                      columns={taskTableColumns}
+                      dataSource={taskTableData}
+                      rowSelection={taskTableRowSelection}
+                      pagination={false}
+                    />
                   </div>
                 </div>
               </div>
