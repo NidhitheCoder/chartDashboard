@@ -1,66 +1,15 @@
 import React from 'react'
-// import { Helmet } from 'react-helmet'
 import Authorize from 'components/LayoutComponents/Authorize'
-// import { Radar, Pie } from 'react-chartjs-2'
-// import canvasjs from 'assets/js/canvasjs.react'
 
 import canvasjs from 'assets/js/canvasjs.react'
 import waterfallChartData1 from './waterfall-data1'
 import waterfallChartData2 from './waterfall-data2'
 import waterfallChartData3 from './waterfall-data3'
 import waterfallChartData4 from './waterfall-data4'
+import { chartsData } from './waterfall-data'
 
 class OverallSpendView extends React.Component {
   render() {
-    // const radarData = {
-    //   labels: ['Marketing', 'Sales', 'Finance', 'HCM', 'Network', 'P & T', 'CEO Office', 'IT'],
-    //   datasets: [
-    //     {
-    //       label: 'Total Spend',
-    //       backgroundColor: 'rgba(0,255,0,0.2)',
-    //       borderColor: 'rgba(0,255,0,1)',
-    //       pointBackgroundColor: 'rgba(179,181,198,1)',
-    //       pointBorderColor: '#fff',
-    //       pointHoverBackgroundColor: '#fff',
-    //       pointHoverBorderColor: 'rgba(179,181,198,1)',
-    //       data: [78, 59, 90, 81, 23, 55, 20, 50],
-    //     },
-    //   ],
-    // }
-
-    // const radarOptions = {
-    //   scale: {
-    //     reverse: true,
-    //     ticks: {
-    //       beginAtZero: true,
-    //     },
-    //   },
-    // }
-
-    // const pieData = {
-    //   labels: [
-    //     'Capex-CA',
-    //     'capex-CB',
-    //     'opex Dev',
-    //     'Opex-CRM',
-    //     'Opex-SO',
-    //     'Opex-ERP',
-    //     'Opex-SI',
-    //     'Opex-OH',
-    //   ],
-    //   text: 'heiii',
-    //   datasets: [
-    //     {
-    //       data: [500, 50, 100, 30, 59, 98, 100, 30],
-    //       label: 'orange',
-    //       backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', 'red', 'green', 'orange', 'blue'],
-    //       hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-    //     },
-    //   ],
-    // }
-
-    // const pieOptions = {}
-
     const { CanvasJSChart } = canvasjs
 
     return (
@@ -70,114 +19,10 @@ class OverallSpendView extends React.Component {
           <CanvasJSChart options={waterfallChartData2} />
           <CanvasJSChart options={waterfallChartData3} />
           <CanvasJSChart options={waterfallChartData4} />
+          {chartsData.map(chart => (
+            <CanvasJSChart key={Math.random()} options={chart} />
+          ))}
         </div>
-        {/* <center>
-          <div className="col-lg-5">
-            <h5 className="text-black">
-              <strong>Total spend</strong>
-            </h5>
-            <div className="mb-5">
-              <Radar data={radarData} options={radarOptions} width={100} height={100} />
-            </div>
-          </div>
-        </center>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
-            gridRowGap: '2%',
-            padding: '10%',
-            paddingLeft: '5%',
-          }}
-        >
-          <div className="mb-5">
-            <h5 className="text-black">
-              <strong>
-                <center>Marketing</center>
-              </strong>
-            </h5>
-            <div className="mb-5">
-              <Pie data={pieData} options={pieOptions} width={400} height={200} />
-            </div>
-          </div>
-
-          <div className="mb-5">
-            <h5 className="text-black">
-              <strong>
-                <center>Sales</center>
-              </strong>
-            </h5>
-            <div className="mb-5">
-              <Pie data={pieData} options={pieOptions} width={400} height={200} />
-            </div>
-          </div>
-
-          <div className="mb-5">
-            <h5 className="text-black">
-              <strong>
-                <center>Finance</center>
-              </strong>
-            </h5>
-            <div className="mb-5">
-              <Pie data={pieData} options={pieOptions} width={400} height={200} />
-            </div>
-          </div>
-
-          <div className="mb-2">
-            <h5 className="text-black">
-              <strong>
-                <center>HCM</center>
-              </strong>
-            </h5>
-            <div className="mb-5">
-              <Pie data={pieData} options={pieOptions} width={400} height={200} />
-            </div>
-          </div>
-
-          <div className="mb-2">
-            <h5 className="text-black">
-              <strong>
-                <center>Network</center>
-              </strong>
-            </h5>
-            <div className="mb-5">
-              <Pie data={pieData} options={pieOptions} width={400} height={200} />
-            </div>
-          </div>
-
-          <div className="mb-2">
-            <h5 className="text-black">
-              <strong>
-                <center>P & T</center>
-              </strong>
-            </h5>
-            <div className="mb-5">
-              <Pie data={pieData} options={pieOptions} width={400} height={200} />
-            </div>
-          </div>
-
-          <div className="mb-5">
-            <h5 className="text-black">
-              <strong>
-                <center>CEO Office</center>
-              </strong>
-            </h5>
-            <div className="mb-5">
-              <Pie data={pieData} options={pieOptions} width={400} height={200} />
-            </div>
-          </div>
-
-          <div className="mb-5">
-            <h5 className="text-black">
-              <strong>
-                <center>IT</center>
-              </strong>
-            </h5>
-            <div className="mb-5">
-              <Pie data={pieData} options={pieOptions} width={400} height={200} />
-            </div>
-          </div>
-        </div> */}
       </Authorize>
     )
   }

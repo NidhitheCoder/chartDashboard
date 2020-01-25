@@ -33,11 +33,21 @@
   }
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
 .logo {
   height: 60px;
   width: 200px;
   // background: $menuBg-darken;
   float: left;
+}
+
+.title {
+  margin: 0;
 }
 
 .logoContainer {
