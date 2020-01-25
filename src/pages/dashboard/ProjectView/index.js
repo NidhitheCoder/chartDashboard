@@ -120,7 +120,7 @@ class ProjectView extends React.Component {
           <div className="col-lg-6">
             <div className="card card--fullHeight" style={{ padding: '5%', paddingTop: '12%' }}>
               <h5 className="text-black">
-                <strong>Stacked Bar</strong>
+                <strong>Project Spend</strong>
               </h5>
               <div className="mb-5">
                 <ChartistGraph

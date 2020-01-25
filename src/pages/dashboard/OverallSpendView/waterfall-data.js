@@ -33,7 +33,7 @@ export const waterfallChartData = {
     fontWeight: 'bolder',
   },
   axisX: {
-    title: 'Departments',
+    title: 'Business Units',
     titleFontSize: 16,
     labelFontSize: 12,
     titleFontFamily: 'Nunito Sans',
