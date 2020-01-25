@@ -2,15 +2,11 @@ import React from 'react'
 import Authorize from 'components/LayoutComponents/Authorize'
 
 import { Helmet } from 'react-helmet'
-import canvasjs from 'assets/js/canvasjs.react'
+import WaterfallGraphCard from 'components/CleanUIComponents/WaterfallGraphCard'
 import ChartCard from 'components/CleanUIComponents/ChartCard'
-import { chartsData } from './waterfall-data'
-import styles from './styles.module.scss'
 
 class OverallSpendView extends React.Component {
   render() {
-    const { CanvasJSChart } = canvasjs
-
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
         <Helmet title="Dashboard Alpha" />
@@ -20,8 +16,8 @@ class OverallSpendView extends React.Component {
         <div className="row">
           <div className="col-xl-4">
             <ChartCard
-              title="Transactions"
-              amount="1240"
+              title="Total Projects"
+              amount="354"
               chartProps={{
                 width: 120,
                 height: 107,
@@ -39,8 +35,8 @@ class OverallSpendView extends React.Component {
           </div>
           <div className="col-xl-4">
             <ChartCard
-              title="Income"
-              amount="$1,240.00"
+              title="Total Capex"
+              amount="$1.24 M"
               chartProps={{
                 width: 120,
                 height: 107,
@@ -58,8 +54,8 @@ class OverallSpendView extends React.Component {
           </div>
           <div className="col-xl-4">
             <ChartCard
-              title="Outcome"
-              amount="$240.56"
+              title="Total Opex"
+              amount="$486,000"
               chartProps={{
                 width: 120,
                 height: 107,
@@ -76,12 +72,51 @@ class OverallSpendView extends React.Component {
             />
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '5%' }}>
-          {chartsData.map(chart => (
-            <div className={`card card--withShadow ${styles.chartCard}`}>
-              <CanvasJSChart key={Math.random()} options={chart} />
-            </div>
-          ))}
+
+        <div className="utils__title utils__title--flat mb-3">
+          <strong className="text-uppercase font-size-16">Spend Charts</strong>
+        </div>
+        <div className="row">
+          <div className="col-lg-6">
+            <WaterfallGraphCard
+              icon="lnr lnr-bookmark"
+              name="Jomy"
+              number="8748-XXXX-1678-5416"
+              type="MASTERCARD"
+              footer="Expires at 03/22"
+              sum="CAPEX - Category A"
+            />
+          </div>
+          <div className="col-lg-6">
+            <WaterfallGraphCard
+              icon="lnr lnr-bookmark"
+              name="Jomy"
+              number="8748-XXXX-1678-5416"
+              type="MASTERCARD"
+              footer="Expires at 03/22"
+              sum="CAPEX - Category B"
+            />
+          </div>
+          <div className="col-lg-6">
+            <WaterfallGraphCard
+              icon="lnr lnr-hourglass"
+              name="Mrs. Angelina Jolie"
+              number="6546-XXXX-1678-1579"
+              type="VISA"
+              footer="Locked Temporary"
+              sum="OPEX - Category A"
+            />
+          </div>
+          <div className="col-lg-6">
+            <WaterfallGraphCard
+              icon="lnr lnr-hourglass"
+              name="fourth one"
+              number="6546-XXXX-1678-1579"
+              type="VISA"
+              footer="Locked Temporary"
+              sum="OPEX - Category B"
+            />
+          </div>
         </div>
       </Authorize>
     )
