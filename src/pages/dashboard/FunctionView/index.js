@@ -1,7 +1,6 @@
 import React from 'react'
 // import { Helmet } from 'react-helmet'
 import Authorize from 'components/LayoutComponents/Authorize'
-import { Button } from 'antd'
 import PaymentCard from 'components/CleanUIComponents/PaymentCard'
 
 class FunctionView extends React.Component {
@@ -39,7 +38,6 @@ class FunctionView extends React.Component {
         </div>
         <div className="utils__title utils__title--flat mb-3">
           <strong className="text-uppercase font-size-16">B2B</strong>
-          <Button className="ml-3">View All</Button>
         </div>
         <div className="row">
           <div className="col-lg-4">
@@ -69,7 +67,6 @@ class FunctionView extends React.Component {
         </div>
         <div className="utils__title utils__title--flat mb-3">
           <strong className="text-uppercase font-size-16">Network</strong>
-          <Button className="ml-3">View All</Button>
         </div>
         <div className="row">
           <div className="col-lg-4">
