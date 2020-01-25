@@ -11,7 +11,7 @@ class OverallSpendView extends React.Component {
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
         <Helmet title="Dashboard Alpha" />
         <div className="utils__title utils__title--flat mb-3">
-          <strong className="text-uppercase font-size-16">Last Week Statistics</strong>
+          <strong className="text-uppercase font-size-16">Overall Stats</strong>
         </div>
         <div className="row">
           <div className="col-xl-4">
