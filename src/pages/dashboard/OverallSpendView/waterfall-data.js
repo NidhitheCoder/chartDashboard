@@ -64,10 +64,6 @@ export const waterfallChartData = {
 const chart1 = { ...waterfallChartData }
 const chart2 = {
   ...waterfallChartData,
-  title: {
-    ...waterfallChartData.title,
-    text: 'Capex- Cat B',
-  },
   data: [
     {
       ...baseData,
@@ -87,10 +83,6 @@ const chart2 = {
 }
 const chart3 = {
   ...waterfallChartData,
-  title: {
-    ...waterfallChartData.title,
-    text: 'Capex- Cat C',
-  },
   data: [
     {
       ...baseData,
@@ -110,10 +102,6 @@ const chart3 = {
 }
 const chart4 = {
   ...waterfallChartData,
-  title: {
-    ...waterfallChartData.title,
-    text: 'Capex- Cat D',
-  },
   data: [
     {
       ...baseData,
@@ -132,6 +120,65 @@ const chart4 = {
   ],
 }
 
-export const chartsData = [chart1, chart2, chart3, chart4]
+export const chartsData = [
+  { title: 'CAPEX - Category A', chartData: chart1 },
+  { title: 'CAPEX - Category B', chartData: chart2 },
+  { title: 'OPEX - Category A', chartData: chart3 },
+  { title: 'OPEX - Category B', chartData: chart4 },
+]
 
-export default waterfallChartData
+export const statsData = [
+  {
+    title: 'Total Projects',
+    amount: '354',
+    chartProps: {
+      width: 120,
+      height: 107,
+      lines: [
+        {
+          values: [2, 11, 8, 14, 18, 20, 26],
+          colors: {
+            area: 'rgba(199, 228, 255, 0.5)',
+            line: '#004585',
+          },
+        },
+      ],
+    },
+  },
+  {
+    title: 'Total Capex',
+    amount: '$1.24 M',
+    chartProps: {
+      width: 120,
+      height: 107,
+      lines: [
+        {
+          values: [20, 80, 67, 120, 132, 66, 97],
+          colors: {
+            area: 'rgba(199, 228, 255, 0.5)',
+            line: '#004585',
+          },
+        },
+      ],
+    },
+  },
+  {
+    title: 'Total Opex',
+    amount: '$486,000',
+    chartProps: {
+      width: 120,
+      height: 107,
+      lines: [
+        {
+          values: [42, 40, 80, 67, 84, 20, 97],
+          colors: {
+            area: 'rgba(199, 228, 255, 0.5)',
+            line: '#004585',
+          },
+        },
+      ],
+    },
+  },
+]
+
+export default chartsData
