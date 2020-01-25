@@ -35,32 +35,32 @@ class ProgramCard extends React.Component {
         </div>
         <div className={styles.dataContainer}>
           <span className={styles.typeContainer}>
+            <div className={styles.type}> NPS Score</div>
             <span
               className={cn(
                 styles.type,
                 npsScore > 0 ? styles.positiveValue : styles.negativeValue,
               )}
             >
-              NPS Score
+              {npsScore}%
             </span>
-            <div className={styles.value}>{npsScore}</div>
           </span>
           <span className={styles.typeContainer}>
+            <div className={styles.type}>Revenue Uplift</div>
             <span
               className={cn(
-                styles.type,
+                styles.value,
                 revenueUplift > 0 ? styles.positiveValue : styles.negativeValue,
               )}
             >
-              Revenue Uplift
+              {revenueUplift} %
             </span>
-            <div className={styles.value}>{revenueUplift} %</div>
           </span>
           <span className={styles.typeContainer}>
-            <span className={cn(styles.type, { [styles.negativeValue]: costSavings < 0 })}>
-              Cost Savings
+            <div className={styles.type}>Cost Savings</div>
+            <span className={cn(styles.value, { [styles.negativeValue]: costSavings < 0 })}>
+              {costSavings} $
             </span>
-            <div className={styles.value}>{costSavings} $</div>
           </span>
         </div>
       </div>
