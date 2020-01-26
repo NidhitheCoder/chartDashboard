@@ -38,6 +38,11 @@
     color: $text-lighten;
   }
 
+  &__titleEqualDescription {
+    font-size: rem(17);
+    color: $text;
+  }
+
   // scrollable block
   &__scrollable {
     overflow: auto;

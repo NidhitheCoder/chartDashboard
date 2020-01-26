@@ -9,20 +9,20 @@
     "second": {
       "name": "Design",
       "description": "",
-      "progress": 50,
-      "status": "active"
+      "progress": 100,
+      "status": "success"
     },
     "third": {
       "name": "Development",
       "description": "",
-      "progress": 40,
+      "progress": 50,
       "status": "active"
     },
     "fourth": {
       "name": "Testing",
       "description": "",
       "progress": 10,
-      "status": "exception"
+      "status": "active"
     }
   }
 }

@@ -32,25 +32,29 @@
       "key": 1,
       "name": "Customer Onboarding",
       "username": "Shekhar",
-      "status": "completed"
+      "status": "Completed",
+      "checkBoxValue": true
     },
     {
       "key": 2,
       "name": "Product Catalogue",
       "username": "Eugenia",
-      "status": "progress"
+      "status": "Completed",
+      "checkBoxValue": true
     },
     {
       "key": 3,
       "name": "Contract Generation",
       "username": "Tronic",
-      "status": "progress"
+      "status": "In Progress",
+      "checkBoxValue": false
     },
     {
       "key": 4,
       "name": "Digicore Integration",
       "username": "Nijesh",
-      "status": "blocked"
+      "status": "Not Started",
+      "checkBoxValue": false
     }
   ]
 }
