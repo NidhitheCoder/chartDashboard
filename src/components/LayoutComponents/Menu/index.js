@@ -9,7 +9,7 @@ import MenuTop from './MenuTop'
 const mapStateToProps = ({ settings }) => ({
   // isMenuTop: settings.isMenuTop,
   isMobileMenuOpen: settings.isMobileMenuOpen,
-  // isMobileView: settings.isMobileView,
+  isMobileView: settings.isMobileView,
   isLightTheme: settings.isLightTheme,
 })
 
