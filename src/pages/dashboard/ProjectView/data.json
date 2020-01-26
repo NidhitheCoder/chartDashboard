@@ -45,13 +45,13 @@
     {
       "key": 3,
       "name": "Contract Generation",
-      "username": "Tronic",
+      "username": "Shekhar",
       "status": "In Progress",
       "checkBoxValue": false
     },
     {
       "key": 4,
-      "name": "Digicore Integration",
+      "name": "ESB Integration",
       "username": "Nijesh",
       "status": "Not Started",
       "checkBoxValue": false
