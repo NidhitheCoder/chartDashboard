@@ -1,17 +1,20 @@
+import { Table } from 'antd'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Authorize from 'components/LayoutComponents/Authorize'
 import ChartistGraph from 'react-chartist'
 import ChartistTooltip from 'chartist-plugin-tooltips-updated'
+
+import Authorize from 'components/LayoutComponents/Authorize'
 import ProgressGroup from 'components/CleanUIComponents/CustomProgressGroup'
-import InfoCard from 'components/CleanUIComponents/InfoCard'
-import { Table } from 'antd'
-import {taskTableData } from './data.json'
+import InfoCard from './InfoCard'
+
+import { taskTableData } from './data.json'
+import styles from './style.module.scss'
+import BudgetInfo from './BudgetInfo'
 
 class ProjectView extends React.Component {
-
   state = {
-    taskTableSelectedRowKeys: []
+    taskTableSelectedRowKeys: [],
   }
 
   // Task Table Settings //
@@ -19,11 +22,8 @@ class ProjectView extends React.Component {
     this.setState({ taskTableSelectedRowKeys })
   }
 
-
   render() {
-    const {
-      taskTableSelectedRowKeys
-    } = this.state
+    const { taskTableSelectedRowKeys } = this.state
 
     // Task Table Settings //
     const taskTableRowSelection = {
@@ -45,7 +45,7 @@ class ProjectView extends React.Component {
       {
         title: 'Status',
         dataIndex: 'status',
-        render: text => <a href="javascript: void(0);">{text}</a>
+        render: text => <a href="javascript: void(0);">{text}</a>,
       },
     ]
 
@@ -72,74 +72,80 @@ class ProjectView extends React.Component {
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
         <Helmet title="B2B Connectivity" />
         <div className="row">
-          <div className="col-lg-9">
-            <div className="card">
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>Product Progress</strong>
+          <div className={styles.flexContainer}>
+            <div className={styles.flexMainItem}>
+              <div className="card">
+                <div className="card-header">
+                  <div className="utils__title">
+                    <strong>Product Progress</strong>
+                  </div>
+                  <div className="utils__titleDescription">
+                    Block with important Work Progress information
+                  </div>
                 </div>
-                <div className="utils__titleDescription">
-                  Block with important Work Progress information
-                </div>
-              </div>
-              <div className="card-body">
-                <div className="row">
-                  <div className="col-xl-12">
-                    <ProgressGroup />
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-xl-12">
+                      <ProgressGroup />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-3 noPadding">
-            <div className="card-body">
-              <div className="row">
-                <InfoCard form="stats-large" icon="calendar" btnType="success" type="success" />
+            <div className={styles.flexItem}>
+              <div className="card" style={{ width: '100%', marginLeft: 30 }}>
+                <InfoCard />
               </div>
             </div>
           </div>
         </div>
 
         <div className="row">
-          <div className="col-lg-6">
-            <div className="card">
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>Development Status Table</strong>
+          <div className={styles.flexContainer}>
+            <div className={styles.flexMainItem}>
+              <div className="card" style={{ height: '100%' }}>
+                <div className="card-header">
+                  <div className="utils__title">
+                    <strong>Project Spend</strong>
+                  </div>
                 </div>
-                <div className="utils__titleDescription">
-                  Important product areas and contact person
-                </div>
-              </div>
-              <div className="card-body">
-                <div className="row">
-                  <div className="col-lg-12">
-                    <Table
-                      className="utils__scrollTable"
-                      scroll={{ x: '100%' }}
-                      columns={taskTableColumns}
-                      dataSource={taskTableData}
-                      rowSelection={taskTableRowSelection}
-                      pagination={false}
-                    />
+                <div className="card-body">
+                  <div className={styles.budgetContainer}>
+                    <div className={styles.budgetSections}>
+                      <ChartistGraph data={stackedBarData} options={stackedBarOptions} type="Bar" />
+                    </div>
+                    <div className={styles.budgetSections}>
+                      <BudgetInfo />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="col-lg-6">
-            <div className="card card--fullHeight" style={{ padding: '5%', paddingTop: '12%' }}>
-              <h5 className="text-black">
-                <strong>Project Spend</strong>
-              </h5>
-              <div className="mb-5">
-                <ChartistGraph
-                  className="height-300"
-                  data={stackedBarData}
-                  options={stackedBarOptions}
-                  type="Bar"
-                />
+            <div className={styles.flexMainItem}>
+              <div className="card" style={{ marginBottom: 0, marginLeft: 30, height: '100%' }}>
+                <div className="card-header">
+                  <div className="utils__title">
+                    <strong>Development Status Table</strong>
+                  </div>
+                  <div className="utils__titleDescription">
+                    Important product areas and contact person
+                  </div>
+                </div>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <Table
+                        className="utils__scrollTable"
+                        scroll={{ x: '100%' }}
+                        columns={taskTableColumns}
+                        dataSource={taskTableData}
+                        rowSelection={taskTableRowSelection}
+                        pagination={false}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
