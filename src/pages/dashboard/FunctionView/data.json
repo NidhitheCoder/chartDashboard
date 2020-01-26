@@ -38,7 +38,7 @@
   ],
   "B2B": [
     {
-      "title": "Program A",
+      "title": "Program D",
       "healthStatus": "negative",
       "npsScore": -4,
       "revenueUplift": -3,
@@ -49,7 +49,7 @@
       }
     },
     {
-      "title": "Program B",
+      "title": "Program E",
       "healthStatus": "positive",
       "npsScore": 20,
       "revenueUplift": -0.8,
@@ -60,7 +60,7 @@
       }
     },
     {
-      "title": "Program C",
+      "title": "Program F",
       "healthStatus": "positive",
       "npsScore": 6.8,
       "revenueUplift": 3,
@@ -73,7 +73,7 @@
   ],
   "Network": [
     {
-      "title": "Program A",
+      "title": "Program G",
       "healthStatus": "positive",
       "npsScore": 8,
       "revenueUplift": 18,
@@ -84,7 +84,7 @@
       }
     },
     {
-      "title": "Program B",
+      "title": "Program H",
       "healthStatus": "negative",
       "npsScore": -4.8,
       "revenueUplift": -21,
@@ -95,7 +95,77 @@
       }
     },
     {
-      "title": "Program C",
+      "title": "Program I",
+      "healthStatus": "positive",
+      "npsScore": 14,
+      "revenueUplift": 8,
+      "costSavings": 170000,
+      "chartData": {
+        "labels": ["Planned", "Actual Spend"],
+        "series": [[270000], [100000]]
+      }
+    }
+  ],
+  "Marketing": [
+    {
+      "title": "Program G",
+      "healthStatus": "positive",
+      "npsScore": 8,
+      "revenueUplift": 18,
+      "costSavings": 21050,
+      "chartData": {
+        "labels": ["Planned", "Actual Spend"],
+        "series": [[200000], [121050]]
+      }
+    },
+    {
+      "title": "Program H",
+      "healthStatus": "negative",
+      "npsScore": -4.8,
+      "revenueUplift": -21,
+      "costSavings": -170000,
+      "chartData": {
+        "labels": ["Planned", "Actual Spend"],
+        "series": [[70000], [170000]]
+      }
+    },
+    {
+      "title": "Program I",
+      "healthStatus": "positive",
+      "npsScore": 14,
+      "revenueUplift": 8,
+      "costSavings": 170000,
+      "chartData": {
+        "labels": ["Planned", "Actual Spend"],
+        "series": [[270000], [100000]]
+      }
+    }
+  ],
+  "Finance": [
+    {
+      "title": "Program G",
+      "healthStatus": "positive",
+      "npsScore": 8,
+      "revenueUplift": 18,
+      "costSavings": 21050,
+      "chartData": {
+        "labels": ["Planned", "Actual Spend"],
+        "series": [[200000], [121050]]
+      }
+    },
+    {
+      "title": "Program H",
+      "healthStatus": "negative",
+      "npsScore": -4.8,
+      "revenueUplift": -21,
+      "costSavings": -170000,
+      "chartData": {
+        "labels": ["Planned", "Actual Spend"],
+        "series": [[70000], [170000]]
+      }
+    },
+    {
+      "title": "Program I",
       "healthStatus": "positive",
       "npsScore": 14,
       "revenueUplift": 8,
