@@ -4,19 +4,19 @@ export async function getLeftMenuData() {
       title: 'Overall Spend',
       key: 'DashboardNew',
       url: '/dashboard/OverallSpendView',
-      icon: 'icmn icmn-home',
+      icon: 'fa fa-dollar',
     },
     {
       title: 'Functional Cost-Benefit',
       key: 'FunctionView',
       url: '/dashboard/FunctionView',
-      icon: 'icmn icmn-books',
+      icon: 'fa fa-group',
     },
     {
       title: 'Program Cost-Benefit',
       key: 'ProgramView',
       url: '/dashboard/ProgramView',
-      icon: 'icmn icmn-menu',
+      icon: 'fa fa-tasks',
     },
   ]
 }

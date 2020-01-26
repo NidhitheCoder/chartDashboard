@@ -10,17 +10,17 @@ class TopBar extends React.Component {
       <div className={styles.topbar}>
         <div className="mr-4">
           <Link to="/dashboard/OverallSpendView">
-            <ProjectManagement id="topBar.overallSpendView" />
+            <ProjectManagement id="topBar.overallSpendView" icon="fa fa-dollar" />
           </Link>
         </div>
         <div className="mr-4">
           <Link to="/dashboard/FunctionView">
-            <ProjectManagement id="topBar.functionView" />
+            <ProjectManagement id="topBar.functionView" icon="fa fa-group" />
           </Link>
         </div>
         <div className="mr-4">
           <Link to="/dashboard/ProgramView">
-            <ProjectManagement id="topBar.projectView" />
+            <ProjectManagement id="topBar.projectView" icon="fa fa-tasks" />
           </Link>
         </div>
       </div>

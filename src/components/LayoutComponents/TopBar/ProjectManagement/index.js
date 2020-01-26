@@ -3,12 +3,11 @@ import { FormattedMessage } from 'react-intl'
 import styles from './style.module.scss'
 
 class ProjectManagement extends React.Component {
-
   render() {
-    const {id} = this.props;
+    const { id, icon } = this.props
     return (
       <div className={styles.dropdown}>
-        <i className={`${styles.icon} icmn-database`} />
+        <i className={`${styles.icon} ${icon}`} />
         <span className="d-none d-xl-inline">
           <strong>
             <FormattedMessage id={id} />
