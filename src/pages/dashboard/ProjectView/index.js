@@ -77,10 +77,10 @@ class ProjectView extends React.Component {
               <div className="card">
                 <div className="card-header">
                   <div className="utils__title">
-                    <strong>Product Progress</strong>
+                    <strong>Whatsapp Self-Service Chatbot</strong>
                   </div>
-                  <div className="utils__titleDescription">
-                    Block with important Work Progress information
+                  <div className="utils__titleEqualDescription">
+                    Vendor: ABC Engineering Private Limited.
                   </div>
                 </div>
                 <div className="card-body">
@@ -126,10 +126,7 @@ class ProjectView extends React.Component {
               <div className="card" style={{ marginBottom: 0, marginLeft: 30, height: '100%' }}>
                 <div className="card-header">
                   <div className="utils__title">
-                    <strong>Development Status Table</strong>
-                  </div>
-                  <div className="utils__titleDescription">
-                    Important product areas and contact person
+                    <strong>Features</strong>
                   </div>
                 </div>
                 <div className="card-body">

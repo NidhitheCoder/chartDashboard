@@ -12,7 +12,7 @@ class FunctionView extends React.Component {
           return (
             <>
               <div className="utils__title utils__title--flat mb-3">
-                <strong className="text-uppercase font-size-16">{unit}</strong>
+                <strong className="text-uppercase font-size-24">{unit}</strong>
               </div>
               <div className="row">
                 {unitData.map(values => (

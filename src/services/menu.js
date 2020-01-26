@@ -19,7 +19,7 @@ export async function getLeftMenuData() {
       icon: 'icmn icmn-menu',
     },
     {
-      title: 'Project List',
+      title: 'Project Details',
       key: 'ProjectView',
       url: '/dashboard/ProjectView',
       icon: 'icmn icmn-file-text',
