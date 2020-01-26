@@ -1,7 +1,8 @@
 {
-  "Sales": [
+  "Program A": [
     {
-      "title": "Program A",
+      "title": "Project A",
+      "vendor": "ABC Private Ltd.",
       "healthStatus": "positive",
       "npsScore": 18,
       "revenueUplift": 9,
@@ -14,7 +15,8 @@
       }
     },
     {
-      "title": "Program B",
+      "title": "Project B",
+      "vendor": "BCD Private Ltd.",
       "healthStatus": "neutral",
       "npsScore": 2,
       "revenueUplift": 1,
@@ -25,7 +27,8 @@
       }
     },
     {
-      "title": "Program C",
+      "title": "Project C",
+      "vendor": "EFG Private Ltd.",
       "healthStatus": "negative",
       "npsScore": -10,
       "revenueUplift": 0.1,
@@ -36,9 +39,10 @@
       }
     }
   ],
-  "B2B": [
+  "Program B": [
     {
-      "title": "Program A",
+      "title": "Project A",
+      "vendor": "HIJ Private Ltd.",
       "healthStatus": "negative",
       "npsScore": -4,
       "revenueUplift": -3,
@@ -49,7 +53,8 @@
       }
     },
     {
-      "title": "Program B",
+      "title": "Project B",
+      "vendor": "LKM Private Ltd.",
       "healthStatus": "positive",
       "npsScore": 20,
       "revenueUplift": -0.8,
@@ -60,7 +65,8 @@
       }
     },
     {
-      "title": "Program C",
+      "title": "Project C",
+      "vendor": "NOP Private Ltd.",
       "healthStatus": "positive",
       "npsScore": 6.8,
       "revenueUplift": 3,
@@ -71,9 +77,10 @@
       }
     }
   ],
-  "Network": [
+  "Program C": [
     {
-      "title": "Program A",
+      "title": "Project A",
+      "vendor": "URS Private Ltd.",
       "healthStatus": "positive",
       "npsScore": 8,
       "revenueUplift": 18,
@@ -84,7 +91,8 @@
       }
     },
     {
-      "title": "Program B",
+      "title": "Project B",
+      "vendor": "TUV Private Ltd.",
       "healthStatus": "negative",
       "npsScore": -4.8,
       "revenueUplift": -21,
@@ -95,7 +103,8 @@
       }
     },
     {
-      "title": "Program C",
+      "title": "Project C",
+      "vendor": "XYZ Private Ltd.",
       "healthStatus": "positive",
       "npsScore": 14,
       "revenueUplift": 8,

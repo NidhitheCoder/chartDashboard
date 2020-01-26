@@ -1,12 +1,21 @@
 import cn from 'classnames'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ChartistGraph from 'react-chartist'
 import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 import styles from './style.module.scss'
 
 class ProjectCard extends React.Component {
   render() {
-    const { title, healthStatus, npsScore, revenueUplift, costSavings, chartData } = this.props
+    const {
+      title,
+      vendor,
+      healthStatus,
+      npsScore,
+      revenueUplift,
+      costSavings,
+      chartData,
+    } = this.props
     const horizontalOptions = {
       seriesBarDistance: 20,
       axisY: {
@@ -20,10 +29,13 @@ class ProjectCard extends React.Component {
 
     return (
       <div className={cn('card card--withShadow', styles.paymentCard)}>
-        <div className={styles.titleContainer}>
-          <span className={styles.title}>{title}</span>
-          <div className={cn(styles.health, styles[healthStatus])}>&nbsp;</div>
-        </div>
+        <Link to="/dashboard/ProjectView">
+          <div className={styles.titleContainer}>
+            <span className={styles.title}>{title}</span>
+            <div className={cn(styles.health, styles[healthStatus])}>&nbsp;</div>
+          </div>
+          <div className="utils__titleEqualDescription">Vendor: {vendor}</div>
+        </Link>
         <div className={styles.chartContainer}>
           <ChartistGraph
             className={styles.chart}
