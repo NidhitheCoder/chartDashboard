@@ -38,6 +38,7 @@ export const waterfallChartData = {
     labelFontSize: 12,
     titleFontFamily: 'Nunito Sans',
     labelFontFamily: 'Nunito Sans',
+    toolTipFontFamily: 'Nunito Sans',
     labelAngle: -45,
     labelFontColor: '#666',
   },
@@ -52,6 +53,7 @@ export const waterfallChartData = {
     gridColor: '#ddd',
   },
   toolTip: {
+    fontFamily: 'Nunito Sans',
     shared: true,
     contentFormatter: e => {
       const multiplier = e.entries[0].dataPoint.label === 'Total' ? 1 : -1

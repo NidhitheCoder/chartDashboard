@@ -70,7 +70,7 @@ class ProjectView extends React.Component {
 
     return (
       <Authorize roles={['admin']} redirect to="/dashboard/beta">
-        <Helmet title="B2B Connectivity" />
+        <Helmet title="Project Details" />
         <div className="row">
           <div className={styles.flexContainer}>
             <div className={styles.flexMainItem}>
