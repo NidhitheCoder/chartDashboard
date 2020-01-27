@@ -1,4 +1,3 @@
-import { Table } from 'antd'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import ChartistGraph from 'react-chartist'
@@ -6,8 +5,9 @@ import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 
 import Authorize from 'components/LayoutComponents/Authorize'
 import ProgressGroup from 'components/CleanUIComponents/CustomProgressGroup'
-import InfoCard from './InfoCard'
+import { Table, Tooltip } from 'antd'
 
+import InfoCard from './InfoCard'
 import { taskTableData } from './data.json'
 import styles from './style.module.scss'
 import BudgetInfo from './BudgetInfo'
@@ -109,13 +109,26 @@ class ProjectView extends React.Component {
                     <strong>Project Spend</strong>
                   </div>
                 </div>
-                <div className="card-body">
+                <div className="card-body-custom">
                   <div className={styles.budgetContainer}>
                     <div className={styles.budgetSections}>
                       <ChartistGraph data={stackedBarData} options={stackedBarOptions} type="Bar" />
                     </div>
                     <div className={styles.budgetSections}>
                       <BudgetInfo />
+                    </div>
+                  </div>
+                  <div className={styles.option}>
+                    <div className={styles.sizes}>
+                      <Tooltip placement="top" title="Size S">
+                        <span className={styles.blueBackground}>Cost Type A</span>
+                      </Tooltip>
+                      <Tooltip placement="top" title="Size M">
+                        <span className={styles.greenBackground}>Cost Type B</span>
+                      </Tooltip>
+                      <Tooltip placement="top" title="Size XL">
+                        <span className={styles.yellowBackground}>Cost Type C</span>
+                      </Tooltip>
                     </div>
                   </div>
                 </div>

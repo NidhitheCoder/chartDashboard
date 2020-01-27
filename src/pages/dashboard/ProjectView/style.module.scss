@@ -32,3 +32,60 @@
   flex: 1;
   height: 100%;
 }
+
+.sizes {
+  font-style: normal;
+  margin: auto;
+
+
+  span {
+    display: inline-block;
+    margin-right: rem(5);
+    border: 1px solid $gray;
+    line-height: rem(14);
+    border-radius: rem(20);
+    padding: rem(3);
+    min-width: rem(30);
+    text-align: center;
+    margin-bottom: rem(5);
+  }
+}
+
+.descr {
+  margin-top: rem(10);
+}
+
+.option {
+  margin: auto;
+  margin-left: 20px;
+
+  &:last-child {
+    margin-bottom: rem(5);
+  }
+
+  .sizes {
+    margin: 0;
+  }
+}
+
+.blueBackground {
+  background-color: #0190fe;
+}
+
+.greenBackground {
+  background-color: #46be8a;
+}
+
+.yellowBackground {
+  background-color: #ff0;
+}
+
+.card-body-custom {
+  flex: 1 1 auto;
+  padding: rem(25) rem(30);
+
+  @media (max-width: $md-max-width) {
+    padding-left: rem(20);
+    padding-right: rem(20);
+  }
+}
