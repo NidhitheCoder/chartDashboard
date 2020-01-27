@@ -5,8 +5,8 @@ import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 
 import Authorize from 'components/LayoutComponents/Authorize'
 import ProgressGroup from 'components/CleanUIComponents/CustomProgressGroup'
-import { Table, Tooltip } from 'antd'
-
+import { Table } from 'antd'
+import Donut from 'components/CleanUIComponents/Donut'
 import InfoCard from './InfoCard'
 import { taskTableData } from './data.json'
 import styles from './style.module.scss'
@@ -118,18 +118,16 @@ class ProjectView extends React.Component {
                       <BudgetInfo />
                     </div>
                   </div>
-                  <div className={styles.option}>
-                    <div className={styles.sizes}>
-                      <Tooltip placement="top" title="Size S">
-                        <span className={styles.blueBackground}>Cost Type A</span>
-                      </Tooltip>
-                      <Tooltip placement="top" title="Size M">
-                        <span className={styles.greenBackground}>Cost Type B</span>
-                      </Tooltip>
-                      <Tooltip placement="top" title="Size XL">
-                        <span className={styles.yellowBackground}>Cost Type C</span>
-                      </Tooltip>
-                    </div>
+                  <div className="text-center">
+                    <span className="mr-2">
+                      <Donut type="yellow" name="Cost Type A" />
+                    </span>
+                    <span className="mr-2">
+                      <Donut type="green" name="Cost Type B" />
+                    </span>
+                    <span className="mr-2">
+                      <Donut type="info" name="Cost Type C" />
+                    </span>
                   </div>
                 </div>
               </div>
